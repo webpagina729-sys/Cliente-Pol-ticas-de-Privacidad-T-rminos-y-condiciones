@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestros Términos, Privacidad y Devoluciones · Revende Ways</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#081326;
+    --navy-900:#0b1f3a;
+    --navy-800:#123259;
+    --navy-700:#1a4577;
+    --navy-600:#245a97;
+    --blue-accent:#2563a6;
+    --blue-soft:#eaf1f8;
+    --paper:#ffffff;
+    --ink:#161b22;
+    --muted:#5c6675;
+    --muted-light:#8894a3;
+    --line:#e3e8ef;
+    --line-strong:#c7d1de;
+    --radius:6px;
+    --serif:'Source Serif 4', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --shadow-sm:0 1px 2px rgba(11,31,58,0.06);
+    --shadow-md:0 8px 24px rgba(11,31,58,0.10);
+    --shadow-lg:0 24px 60px rgba(11,31,58,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  a{color:inherit;}
+
+  /* ============ TOP BAR ============ */
+  .topbar{
+    position:sticky; top:0; z-index:60;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px;
+    font-family:var(--serif); font-weight:700; font-size:19px;
+    color:var(--navy-900); letter-spacing:0.2px;
+  }
+  .brand .mark{
+    width:34px; height:34px; border-radius:4px;
+    background:var(--navy-900);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family:var(--serif); font-weight:700; font-size:16px;
+  }
+  .brand .sub{
+    display:block; font-family:var(--sans); font-weight:500; font-size:10.5px;
+    letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-top:2px;
+  }
+  .menu-btn{
+    display:flex; align-items:center; gap:9px;
+    background:var(--navy-900); color:#fff; border:none;
+    padding:10px 18px; border-radius:4px; cursor:pointer;
+    font-family:var(--sans); font-weight:600; font-size:13.5px; letter-spacing:0.3px;
+    transition:background .15s ease;
+  }
+  .menu-btn:hover{background:var(--navy-700);}
+  .menu-btn svg{width:16px; height:16px;}
+
+  /* ============ HERO ============ */
+  .hero{
+    padding:76px 32px 56px;
+    max-width:920px; margin:0 auto;
+    text-align:center;
+  }
+  .hero .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+    color:var(--blue-accent); margin-bottom:22px;
+  }
+  .hero .eyebrow::before, .hero .eyebrow::after{
+    content:""; width:28px; height:1px; background:var(--line-strong);
+  }
+  .hero h1{
+    font-family:var(--serif); font-weight:700;
+    font-size:clamp(26px, 3.6vw, 44px);
+    color:var(--navy-950);
+    margin:0 0 16px;
+    white-space:nowrap;
+    letter-spacing:-0.3px;
+  }
+  .hero p.lede{
+    font-size:16px; color:var(--muted); max-width:620px; margin:0 auto;
+  }
+  @media (max-width:640px){
+    .hero h1{white-space:normal; font-size:26px;}
+  }
+
+  /* ============ DOC RIBBONS ============ */
+  .docs-wrap{
+    max-width:920px; margin:0 auto; padding:0 32px 90px;
+    display:flex; flex-direction:column; gap:22px;
+  }
+  .ribbon{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--paper);
+    box-shadow:var(--shadow-sm);
+    transition:box-shadow .2s ease;
+  }
+  .ribbon-head{
+    display:flex; align-items:center; gap:18px;
+    padding:22px 26px;
+    cursor:pointer;
+    background:var(--navy-900);
+    color:#fff;
+    user-select:none;
+  }
+  .ribbon-head .idx{
+    font-family:var(--serif); font-size:13px; font-weight:600;
+    color:rgba(255,255,255,0.55); letter-spacing:1px;
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:3px; padding:3px 8px; flex-shrink:0;
+  }
+  .ribbon-head .titles{flex:1; min-width:0;}
+  .ribbon-head h2{
+    font-family:var(--serif); font-size:21px; font-weight:700; margin:0 0 4px; color:#fff;
+  }
+  .ribbon-head .preview{
+    font-size:13.5px; color:rgba(255,255,255,0.72);
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .ribbon-head .chevron{
+    width:30px; height:30px; border-radius:50%;
+    border:1px solid rgba(255,255,255,0.35);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; transition:transform .25s ease;
+  }
+  .ribbon-head .chevron svg{width:14px; height:14px; stroke:#fff;}
+  .ribbon.open .ribbon-head .chevron{transform:rotate(180deg);}
+  .ribbon-head:hover{background:var(--navy-800);}
+
+  .ribbon-body{
+    max-height:0; overflow:hidden;
+    transition:max-height .35s ease;
+  }
+  .ribbon.open .ribbon-body{max-height:20000px;}
+  .ribbon-body-inner{padding:30px 30px 8px;}
+
+  .doc-meta{
+    display:flex; flex-wrap:wrap; gap:18px 28px;
+    font-size:12.5px; color:var(--muted);
+    padding-bottom:22px; margin-bottom:22px; border-bottom:1px solid var(--line);
+  }
+  .doc-meta strong{color:var(--navy-900); font-weight:600;}
+
+  /* Legal data tables (privacy categories / providers) */
+  .legal-table{
+    width:100%; border-collapse:collapse; margin:6px 0 18px;
+    font-size:13.5px; border:1px solid var(--line); border-radius:4px; overflow:hidden;
+  }
+  .legal-table th{
+    background:var(--navy-900); color:#fff; text-align:left;
+    font-family:var(--sans); font-weight:600; font-size:12px;
+    letter-spacing:0.4px; text-transform:uppercase; padding:10px 14px;
+  }
+  .legal-table td{
+    padding:11px 14px; border-top:1px solid var(--line); color:#333c47;
+    vertical-align:top; background:var(--paper);
+  }
+  .legal-table tr:nth-child(even) td{background:var(--blue-soft);}
+  @media (max-width:640px){
+    .legal-table{display:block; overflow-x:auto; white-space:nowrap;}
+  }
+
+  /* Index / TOC */
+  .toc-title{
+    font-family:var(--serif); font-weight:700; font-size:14px;
+    text-transform:uppercase; letter-spacing:1.2px; color:var(--navy-900);
+    margin:0 0 14px;
+  }
+  .toc-list{
+    list-style:none; margin:0 0 34px; padding:0;
+    display:grid; grid-template-columns:1fr 1fr; gap:2px 28px;
+    border:1px solid var(--line); border-radius:var(--radius); padding:8px;
+    background:var(--blue-soft);
+  }
+  @media (max-width:640px){ .toc-list{grid-template-columns:1fr;} }
+  .toc-list li a{
+    display:flex; gap:10px; align-items:baseline;
+    text-decoration:none; color:var(--ink);
+    font-size:13.5px; padding:8px 10px; border-radius:4px;
+    transition:background .12s ease, color .12s ease;
+  }
+  .toc-list li a:hover{background:#fff; color:var(--blue-accent);}
+  .toc-list li a .n{
+    font-family:var(--serif); font-weight:700; color:var(--navy-700);
+    font-size:13px; min-width:18px;
+  }
+
+  /* Sections */
+  .section-block{
+    scroll-margin-top:90px;
+    padding:26px 0; border-bottom:1px solid var(--line);
+  }
+  .section-block:last-of-type{border-bottom:none;}
+  .section-block h3{
+    font-family:var(--serif); font-size:18.5px; font-weight:700;
+    color:var(--navy-900); margin:0 0 12px;
+    display:flex; gap:12px; align-items:baseline;
+  }
+  .section-block h3 .num{
+    font-size:14px; color:var(--blue-accent); font-weight:700;
+    border-bottom:2px solid var(--blue-accent); padding-bottom:1px;
+  }
+  .section-block p{
+    margin:0 0 12px; font-size:15px; color:#333c47;
+  }
+  .section-block h4{
+    font-family:var(--sans); font-size:13.5px; font-weight:700;
+    color:var(--navy-800); text-transform:uppercase; letter-spacing:0.5px;
+    margin:18px 0 8px;
+  }
+  .section-block ul{margin:0 0 14px; padding-left:20px;}
+  .section-block li{margin-bottom:7px; font-size:14.5px; color:#333c47;}
+
+  .group{position:relative;}
+  .group.collapsed{display:none;}
+  .reveal-wrap{
+    display:flex; justify-content:center; padding:8px 0 28px;
+  }
+  .reveal-btn{
+    background:var(--paper); border:1px solid var(--navy-700); color:var(--navy-800);
+    font-family:var(--sans); font-weight:600; font-size:13px;
+    padding:10px 22px; border-radius:30px; cursor:pointer;
+    display:flex; align-items:center; gap:8px;
+    transition:all .15s ease;
+  }
+  .reveal-btn:hover{background:var(--navy-900); color:#fff; border-color:var(--navy-900);}
+  .reveal-btn svg{width:13px; height:13px;}
+
+  .signature-block{
+    margin-top:10px; padding:22px 24px; background:var(--blue-soft);
+    border-left:3px solid var(--navy-800); border-radius:0 4px 4px 0;
+    font-size:13.5px; color:var(--navy-900); font-style:italic;
+  }
+
+  /* ============ SIDE DRAWER ============ */
+  .overlay{
+    position:fixed; inset:0; background:rgba(8,19,38,0.45);
+    opacity:0; pointer-events:none; transition:opacity .25s ease;
+    z-index:70; backdrop-filter:blur(2px);
+  }
+  .overlay.show{opacity:1; pointer-events:auto;}
+
+  .drawer{
+    position:fixed; top:0; right:0; height:100%;
+    width:420px; max-width:92vw;
+    background:var(--paper);
+    box-shadow:var(--shadow-lg);
+    transform:translateX(100%);
+    transition:transform .3s cubic-bezier(.4,0,.2,1);
+    z-index:80;
+    display:flex; flex-direction:column;
+  }
+  .drawer.show{transform:translateX(0);}
+  .drawer-head{
+    padding:22px 24px 18px; border-bottom:1px solid var(--line);
+    display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+    background:var(--navy-900); color:#fff;
+  }
+  .drawer-head h3{font-family:var(--serif); margin:0 0 4px; font-size:19px;}
+  .drawer-head p{margin:0; font-size:12.5px; color:rgba(255,255,255,0.7);}
+  .drawer-close{
+    background:transparent; border:1px solid rgba(255,255,255,0.35); color:#fff;
+    width:30px; height:30px; border-radius:50%; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .drawer-close svg{width:14px; height:14px;}
+
+  .drawer-tabs{
+    display:flex; border-bottom:1px solid var(--line); flex-shrink:0;
+  }
+  .drawer-tab{
+    flex:1; text-align:center; padding:14px 8px; cursor:pointer;
+    font-size:12.5px; font-weight:600; color:var(--muted);
+    border-bottom:2px solid transparent; letter-spacing:0.3px;
+    transition:all .15s ease; background:none; border-top:none; border-left:none; border-right:none;
+    font-family:var(--sans);
+  }
+  .drawer-tab.active{color:var(--navy-900); border-bottom-color:var(--navy-800);}
+
+  .drawer-body{overflow-y:auto; flex:1; padding:6px 0;}
+  .drawer-panel{display:none;}
+  .drawer-panel.active{display:block;}
+
+  .menu-item{border-bottom:1px solid var(--line);}
+  .menu-item-head{
+    display:flex; align-items:center; gap:12px;
+    padding:15px 24px; cursor:pointer;
+    transition:background .12s ease;
+  }
+  .menu-item-head:hover{background:var(--blue-soft);}
+  .menu-item-head .n{
+    font-family:var(--serif); font-weight:700; font-size:13px; color:var(--blue-accent);
+    width:22px; flex-shrink:0;
+  }
+  .menu-item-head .t{
+    flex:1; font-size:13.5px; font-weight:600; color:var(--navy-950); line-height:1.35;
+  }
+  .menu-item-head .arrow{
+    width:16px; height:16px; flex-shrink:0; transition:transform .2s ease; color:var(--muted-light);
+  }
+  .menu-item.open .menu-item-head .arrow{transform:rotate(90deg); color:var(--navy-800);}
+  .menu-item-desc{
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+    padding:0 24px;
+  }
+  .menu-item.open .menu-item-desc{max-height:260px; padding:0 24px 18px;}
+  .menu-item-desc p{
+    margin:0 0 10px; font-size:13px; color:var(--muted); line-height:1.65;
+  }
+  .goto-link{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:12.5px; font-weight:600; color:var(--blue-accent);
+    text-decoration:none; cursor:pointer;
+  }
+  .goto-link svg{width:12px; height:12px;}
+  .goto-link:hover{text-decoration:underline;}
+
+  /* ============ FOOTER ============ */
+  footer{
+    border-top:1px solid var(--line);
+    padding:36px 32px; text-align:center;
+    color:var(--muted-light); font-size:12px;
+  }
+  footer .fname{font-family:var(--serif); color:var(--navy-800); font-weight:700; font-size:14px; margin-bottom:6px;}
+
+  ::-webkit-scrollbar{width:9px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+  ::-webkit-scrollbar-thumb{background:var(--line-strong); border-radius:10px;}
+
+  @media (max-width:640px){
+    .topbar{padding:14px 18px;}
+    .hero{padding:48px 18px 36px;}
+    .docs-wrap{padding:0 14px 60px;}
+    .ribbon-head{padding:18px;}
+    .ribbon-body-inner{padding:22px 18px 8px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="mark">RW</div>
+    <div>
+      Revende Ways
+      <span class="sub">Documentación Legal · Clientes</span>
+    </div>
+  </div>
+  <button class="menu-btn" id="openDrawer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    Índice y descripciones
+  </button>
+</div>
+
+<div class="hero">
+  <div class="eyebrow">Documento vigente desde el 29 de julio de 2026</div>
+  <h1>Nuestros Términos, Privacidad y Devoluciones</h1>
+  <p class="lede">Toda la información legal que rige las compras realizadas en las Tiendas de Revende Ways, presentada en su texto íntegro y sin modificaciones. Seleccioná un documento para desplegarlo, o abrí el índice lateral para ver una descripción de cada punto.</p>
+</div>
+
+<div class="docs-wrap">
+
+  <!-- ===================== TERMS RIBBON ===================== -->
+  <div class="ribbon" id="ribbon-terms">
+    <div class="ribbon-head" data-toggle="ribbon-terms">
+      <div class="idx">DOC. 01</div>
+      <div class="titles">
+        <h2>Términos y Condiciones</h2>
+        <div class="preview" id="terms-preview">Cargando…</div>
+      </div>
+      <div class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="ribbon-body">
+      <div class="ribbon-body-inner">
+        <div class="doc-meta">
+          <div><strong>Documento:</strong> Términos y Condiciones de Compra para Clientes</div>
+          <div><strong>Versión:</strong> 1.0</div>
+          <div><strong>Vigencia:</strong> 29 de julio de 2026</div>
+        </div>
+        <div class="toc-title">Índice</div>
+        <ul class="toc-list" id="terms-toc"></ul>
+        <div id="terms-sections"></div>
+        <div class="reveal-wrap" id="terms-reveal"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PRIVACY RIBBON ===================== -->
+  <div class="ribbon" id="ribbon-privacy">
+    <div class="ribbon-head" data-toggle="ribbon-privacy">
+      <div class="idx">DOC. 02</div>
+      <div class="titles">
+        <h2>Política de Privacidad</h2>
+        <div class="preview" id="privacy-preview">Cargando…</div>
+      </div>
+      <div class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="ribbon-body">
+      <div class="ribbon-body-inner">
+        <div class="doc-meta">
+          <div><strong>Documento:</strong> Política de Privacidad para Clientes</div>
+          <div><strong>Versión:</strong> 1.0</div>
+          <div><strong>Vigencia:</strong> 29 de julio de 2026</div>
+        </div>
+        <div class="toc-title">Índice</div>
+        <ul class="toc-list" id="privacy-toc"></ul>
+        <div id="privacy-sections"></div>
+        <div class="reveal-wrap" id="privacy-reveal"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== RETURNS RIBBON ===================== -->
+  <div class="ribbon" id="ribbon-devolutions">
+    <div class="ribbon-head" data-toggle="ribbon-devolutions">
+      <div class="idx">DOC. 03</div>
+      <div class="titles">
+        <h2>Política de Devoluciones y Garantías</h2>
+        <div class="preview" id="devolutions-preview">Cargando…</div>
+      </div>
+      <div class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="ribbon-body">
+      <div class="ribbon-body-inner">
+        <div class="doc-meta">
+          <div><strong>Documento:</strong> Política de Devoluciones y Garantías</div>
+          <div><strong>Versión:</strong> 1.0</div>
+          <div><strong>Vigencia:</strong> 29 de julio de 2026</div>
+        </div>
+        <div class="toc-title">Índice</div>
+        <ul class="toc-list" id="devolutions-toc"></ul>
+        <div id="devolutions-sections"></div>
+        <div class="reveal-wrap" id="devolutions-reveal"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="fname">Revende Ways · Tu Tienda Propia</div>
+  Titular: persona física con domicilio legal en Carlos Casares, Provincia de Buenos Aires, Argentina<br>
+  Documentos vigentes desde el 29 de julio de 2026 — Versión 1.0
+</footer>
+
+<!-- ===================== SIDE DRAWER ===================== -->
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <div>
+      <h3>Índice y descripciones</h3>
+      <p>Un resumen de cada punto de los tres documentos</p>
+    </div>
+    <button class="drawer-close" id="closeDrawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="drawer-tabs">
+    <button class="drawer-tab active" data-tab="terms">Términos y Condiciones</button>
+    <button class="drawer-tab" data-tab="privacy">Política de Privacidad</button>
+    <button class="drawer-tab" data-tab="devolutions">Devoluciones y Garantías</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-panel active" id="panel-terms"></div>
+    <div class="drawer-panel" id="panel-privacy"></div>
+    <div class="drawer-panel" id="panel-devolutions"></div>
+  </div>
+</div>
+
+<script>
+const TERMS_DATA = [{"num": "1", "title": "Objeto y aceptación de los Términos", "body": "1.1. Los presentes Términos y Condiciones (en adelante, los \"Términos\") regulan la relación entre toda persona que ingresa como cliente (en adelante, el \"Cliente\") a una tienda virtual (en adelante, la \"Tienda\") operada por un Revendedor/Emprendedor (en adelante, el \"Revendedor\") dentro de la plataforma tecnológica \"Revende Ways\" (en adelante, la \"Plataforma\"), con motivo de la consulta del catálogo exhibido y/o de la realización de una compra.\n1.2. Previo a completar cualquier compra en una Tienda, la Plataforma exige al Cliente la aceptación expresa de estos Términos, mediante un mecanismo de confirmación activa (checkbox u equivalente) integrado en el proceso de checkout. Dicha aceptación es un requisito obligatorio y no soslayable para finalizar la compra.\n1.3. Al aceptar estos Términos, el Cliente declara haberlos leído y comprendido en su totalidad, y acepta en forma expresa, absoluta y sin reservas que:\n• La compra que realiza se celebra exclusivamente entre él y el Revendedor titular de la Tienda.\n• Asume la total y completa responsabilidad, junto con el Revendedor, por la transacción que realice, en los términos detallados en la Sección 5 de este documento.\n• El Titular de la Plataforma Revende Ways no es parte de dicha transacción, no interviene en su ejecución, y no asume responsabilidad alguna por ella, conforme lo desarrollado en la Sección 13.\n1.4. Si el Cliente no está de acuerdo con estos Términos, no debe completar la compra ni continuar utilizando la Tienda.", "desc": "Explica que estos Términos regulan la relación entre el Cliente y la Tienda de un Revendedor, que la aceptación mediante checkbox es obligatoria antes de comprar, y que el Cliente asume responsabilidad junto con el Revendedor por la transacción.", "html": "<p>1.1. Los presentes Términos y Condiciones (en adelante, los &quot;Términos&quot;) regulan la relación entre toda persona que ingresa como cliente (en adelante, el &quot;Cliente&quot;) a una tienda virtual (en adelante, la &quot;Tienda&quot;) operada por un Revendedor/Emprendedor (en adelante, el &quot;Revendedor&quot;) dentro de la plataforma tecnológica &quot;Revende Ways&quot; (en adelante, la &quot;Plataforma&quot;), con motivo de la consulta del catálogo exhibido y/o de la realización de una compra.</p>\n<p>1.2. Previo a completar cualquier compra en una Tienda, la Plataforma exige al Cliente la aceptación expresa de estos Términos, mediante un mecanismo de confirmación activa (checkbox u equivalente) integrado en el proceso de checkout. Dicha aceptación es un requisito obligatorio y no soslayable para finalizar la compra.</p>\n<p>1.3. Al aceptar estos Términos, el Cliente declara haberlos leído y comprendido en su totalidad, y acepta en forma expresa, absoluta y sin reservas que:</p>\n<ul><li>La compra que realiza se celebra exclusivamente entre él y el Revendedor titular de la Tienda.</li><li>Asume la total y completa responsabilidad, junto con el Revendedor, por la transacción que realice, en los términos detallados en la Sección 5 de este documento.</li><li>El Titular de la Plataforma Revende Ways no es parte de dicha transacción, no interviene en su ejecución, y no asume responsabilidad alguna por ella, conforme lo desarrollado en la Sección 13.</li></ul>\n<p>1.4. Si el Cliente no está de acuerdo con estos Términos, no debe completar la compra ni continuar utilizando la Tienda.</p>"}, {"num": "2", "title": "Definiciones", "body": "• Plataforma: el servicio tecnológico \"Revende Ways\", que provee a los Revendedores la infraestructura técnica (tienda web, catálogo, motor de precios, mensajería) para operar sus propios negocios de reventa.\n• Titular: la persona propietaria y operadora de la Plataforma, identificada al inicio de este documento, cuya función se limita a proveer la infraestructura tecnológica y a proveer los productos del Catálogo al Revendedor, sin intervenir en la venta entre el Revendedor y el Cliente.\n• Revendedor: la persona que, mediante un Código de Acceso emitido por el Titular, configura y opera su propia Tienda dentro de la Plataforma, fija los precios finales al público y vende los productos del Catálogo a sus Clientes por cuenta y riesgo propios.\n• Cliente: toda persona que ingresa a una Tienda a través del Enlace compartido por un Revendedor, con el fin de consultar el Catálogo y/o realizar una compra.\n• Tienda: el espacio virtual personalizado que cada Revendedor configura dentro de la Plataforma para exhibir el Catálogo y recibir pedidos de sus Clientes.\n• Catálogo: el conjunto de productos exhibidos en la Tienda, provistos y mantenidos por el Titular, y comercializados por el Revendedor bajo su propia política de precios.\n• Pedido: la solicitud de compra que el Cliente genera y envía al Revendedor, habitualmente a través de WhatsApp, con el detalle y el total de los productos seleccionados.", "desc": "Define los términos clave del documento: Plataforma, Titular, Revendedor, Cliente, Tienda, Catálogo y Pedido, para precisar el alcance de cada rol dentro del ecosistema de Revende Ways.", "html": "<ul><li>Plataforma: el servicio tecnológico &quot;Revende Ways&quot;, que provee a los Revendedores la infraestructura técnica (tienda web, catálogo, motor de precios, mensajería) para operar sus propios negocios de reventa.</li><li>Titular: la persona propietaria y operadora de la Plataforma, identificada al inicio de este documento, cuya función se limita a proveer la infraestructura tecnológica y a proveer los productos del Catálogo al Revendedor, sin intervenir en la venta entre el Revendedor y el Cliente.</li><li>Revendedor: la persona que, mediante un Código de Acceso emitido por el Titular, configura y opera su propia Tienda dentro de la Plataforma, fija los precios finales al público y vende los productos del Catálogo a sus Clientes por cuenta y riesgo propios.</li><li>Cliente: toda persona que ingresa a una Tienda a través del Enlace compartido por un Revendedor, con el fin de consultar el Catálogo y/o realizar una compra.</li><li>Tienda: el espacio virtual personalizado que cada Revendedor configura dentro de la Plataforma para exhibir el Catálogo y recibir pedidos de sus Clientes.</li><li>Catálogo: el conjunto de productos exhibidos en la Tienda, provistos y mantenidos por el Titular, y comercializados por el Revendedor bajo su propia política de precios.</li><li>Pedido: la solicitud de compra que el Cliente genera y envía al Revendedor, habitualmente a través de WhatsApp, con el detalle y el total de los productos seleccionados.</li></ul>"}, {"num": "3", "title": "Descripción del servicio para el Cliente", "body": "3.1. A través de la Plataforma, el Cliente puede acceder a la Tienda de un Revendedor mediante el Enlace que este comparte, consultar el Catálogo con los precios finales fijados por dicho Revendedor, armar un pedido y enviarlo para su compra, habitualmente por WhatsApp.\n3.2. La Plataforma constituye exclusivamente la herramienta tecnológica que permite al Revendedor exhibir el Catálogo y gestionar el pedido del Cliente. La Plataforma no vende, no factura ni despacha directamente al Cliente los productos exhibidos: quien vende, cobra y entrega es el Revendedor.", "desc": "Describe cómo el Cliente accede a la Tienda de un Revendedor mediante un enlace, consulta el catálogo con precios finales, y arma su pedido, aclarando que la Plataforma es solo la herramienta tecnológica y que quien vende, cobra y entrega es el Revendedor.", "html": "<p>3.1. A través de la Plataforma, el Cliente puede acceder a la Tienda de un Revendedor mediante el Enlace que este comparte, consultar el Catálogo con los precios finales fijados por dicho Revendedor, armar un pedido y enviarlo para su compra, habitualmente por WhatsApp.</p>\n<p>3.2. La Plataforma constituye exclusivamente la herramienta tecnológica que permite al Revendedor exhibir el Catálogo y gestionar el pedido del Cliente. La Plataforma no vende, no factura ni despacha directamente al Cliente los productos exhibidos: quien vende, cobra y entrega es el Revendedor.</p>"}, {"num": "4", "title": "Naturaleza de la relación entre las partes", "body": "4.1. La compraventa que el Cliente realiza a través de una Tienda es un acto de comercio celebrado exclusivamente entre el Cliente y el Revendedor. El Titular no es vendedor, no es parte, no es garante, no es intermediario financiero ni fiador de dicha compraventa.\n4.2. La transacción se perfecciona y ejecuta entre dos partes responsables —el Cliente y el Revendedor—, y no con el Titular. El pago y la entrega de la mercadería se gestionan íntegramente entre el Cliente y el Revendedor, por fuera de la Plataforma (habitualmente por WhatsApp y por los medios de pago y envío que el Revendedor determine).\n4.3. El rol del Titular se limita a proveer la infraestructura tecnológica utilizada por el Revendedor para operar su Tienda y a proveer los productos del Catálogo al propio Revendedor, en el marco de una relación comercial distinta (Titular–Revendedor) de la que el Cliente no es parte.", "desc": "Aclara que la compraventa es un acto de comercio celebrado exclusivamente entre el Cliente y el Revendedor, que el Titular no es vendedor ni garante, y que el pago y la entrega se gestionan enteramente por fuera de la Plataforma.", "html": "<p>4.1. La compraventa que el Cliente realiza a través de una Tienda es un acto de comercio celebrado exclusivamente entre el Cliente y el Revendedor. El Titular no es vendedor, no es parte, no es garante, no es intermediario financiero ni fiador de dicha compraventa.</p>\n<p>4.2. La transacción se perfecciona y ejecuta entre dos partes responsables —el Cliente y el Revendedor—, y no con el Titular. El pago y la entrega de la mercadería se gestionan íntegramente entre el Cliente y el Revendedor, por fuera de la Plataforma (habitualmente por WhatsApp y por los medios de pago y envío que el Revendedor determine).</p>\n<p>4.3. El rol del Titular se limita a proveer la infraestructura tecnológica utilizada por el Revendedor para operar su Tienda y a proveer los productos del Catálogo al propio Revendedor, en el marco de una relación comercial distinta (Titular–Revendedor) de la que el Cliente no es parte.</p>"}, {"num": "5", "title": "Responsabilidad total y exclusiva en la transacción Cliente–Revendedor", "body": "5.1. Al aceptar estos Términos y completar una compra, el Cliente asume, en forma absoluta, completa y sin reservas, la responsabilidad que le corresponde como parte de la transacción que celebra con el Revendedor, reconociendo que dicha transacción se realiza entre dos partes responsables —el Cliente y el Revendedor— y no con el Titular.\n5.2. El Cliente declara tomar pleno conocimiento de que:\n• El Revendedor es quien fija el precio final, las condiciones de pago, los plazos y modalidades de entrega, y las políticas de cambio y devolución aplicables a su compra.\n• Es el Revendedor quien asume, en los términos descriptos en sus propios Términos y Condiciones, la responsabilidad íntegra frente al Cliente por el cumplimiento de la venta, la calidad y estado de la mercadería entregada, y la atención de cualquier reclamo.\n• El Titular no interviene en la fijación de precios, en el cobro, en el despacho, ni en la atención de reclamos derivados de la compra, y no responde por ellos.\n5.3. Nada de lo anterior priva al Cliente, en su carácter de consumidor, de los derechos irrenunciables que le reconoce la Ley N° 24.240 de Defensa del Consumidor y demás normativa concordante frente al Revendedor, en su calidad de proveedor de los bienes vendidos.\n5.4. Registro de evidencia de aceptación. Cuando el Cliente marca el checkbox de aceptación de estos Términos y confirma el envío de su pedido, la Plataforma genera un registro técnico de evidencia de dicha aceptación (incluyendo, entre otros datos, dirección IP, fecha, hora, timestamp, User-Agent, el identificador del pedido y la versión exacta del documento aceptado), conforme se detalla en la Política de Privacidad para Clientes (Sección 2.1). Dicho registro tiene como único fin acreditar la aceptación ante una eventual controversia, y vincula el pedido realizado con la versión de estos Términos bajo la cual fue efectuado.", "desc": "Establece que el Cliente asume, junto con el Revendedor, la responsabilidad íntegra de la transacción, reconociendo que este último fija precios y condiciones de entrega, sin afectar los derechos irrenunciables del consumidor. Detalla también el registro de evidencia de aceptación.", "html": "<p>5.1. Al aceptar estos Términos y completar una compra, el Cliente asume, en forma absoluta, completa y sin reservas, la responsabilidad que le corresponde como parte de la transacción que celebra con el Revendedor, reconociendo que dicha transacción se realiza entre dos partes responsables —el Cliente y el Revendedor— y no con el Titular.</p>\n<p>5.2. El Cliente declara tomar pleno conocimiento de que:</p>\n<ul><li>El Revendedor es quien fija el precio final, las condiciones de pago, los plazos y modalidades de entrega, y las políticas de cambio y devolución aplicables a su compra.</li><li>Es el Revendedor quien asume, en los términos descriptos en sus propios Términos y Condiciones, la responsabilidad íntegra frente al Cliente por el cumplimiento de la venta, la calidad y estado de la mercadería entregada, y la atención de cualquier reclamo.</li><li>El Titular no interviene en la fijación de precios, en el cobro, en el despacho, ni en la atención de reclamos derivados de la compra, y no responde por ellos.</li></ul>\n<p>5.3. Nada de lo anterior priva al Cliente, en su carácter de consumidor, de los derechos irrenunciables que le reconoce la Ley N° 24.240 de Defensa del Consumidor y demás normativa concordante frente al Revendedor, en su calidad de proveedor de los bienes vendidos.</p>\n<p>5.4. Registro de evidencia de aceptación. Cuando el Cliente marca el checkbox de aceptación de estos Términos y confirma el envío de su pedido, la Plataforma genera un registro técnico de evidencia de dicha aceptación (incluyendo, entre otros datos, dirección IP, fecha, hora, timestamp, User-Agent, el identificador del pedido y la versión exacta del documento aceptado), conforme se detalla en la Política de Privacidad para Clientes (Sección 2.1). Dicho registro tiene como único fin acreditar la aceptación ante una eventual controversia, y vincula el pedido realizado con la versión de estos Términos bajo la cual fue efectuado.</p>"}, {"num": "6", "title": "Precios, promociones y condiciones de venta", "body": "6.1. Los precios exhibidos en cada Tienda son fijados, configurados y actualizados exclusivamente por el Revendedor titular de dicha Tienda, quien es el único responsable de su exactitud, vigencia y cumplimiento de la normativa de defensa del consumidor y lealtad comercial aplicable.\n6.2. Las promociones, descuentos, regalos o condiciones especiales que un Revendedor ofrezca en su Tienda son definidos por este y son de su exclusiva responsabilidad, no comprometiendo en modo alguno al Titular.", "desc": "Aclara que los precios y las promociones exhibidos en cada Tienda son fijados y configurados exclusivamente por el Revendedor, quien es el único responsable de su exactitud y del cumplimiento de la normativa de defensa del consumidor.", "html": "<p>6.1. Los precios exhibidos en cada Tienda son fijados, configurados y actualizados exclusivamente por el Revendedor titular de dicha Tienda, quien es el único responsable de su exactitud, vigencia y cumplimiento de la normativa de defensa del consumidor y lealtad comercial aplicable.</p>\n<p>6.2. Las promociones, descuentos, regalos o condiciones especiales que un Revendedor ofrezca en su Tienda son definidos por este y son de su exclusiva responsabilidad, no comprometiendo en modo alguno al Titular.</p>"}, {"num": "7", "title": "Proceso de compra y pedido", "body": "7.1. El Cliente arma su pedido dentro de la Tienda del Revendedor y lo envía, habitualmente a través de WhatsApp, con el detalle de los productos seleccionados y el total a abonar.\n7.2. Como paso previo obligatorio para completar el pedido, la Plataforma requiere la aceptación expresa de estos Términos por parte del Cliente, conforme lo indicado en el punto 1.2.\n7.3. Una vez enviado el pedido, es el Revendedor quien lo recibe, lo confirma y coordina con el Cliente el pago y la entrega, por los medios y canales que ambos acuerden.", "desc": "Describe el proceso de armado y envío del pedido por WhatsApp, la exigencia previa de aceptar los Términos como paso obligatorio del checkout, y la recepción y coordinación posterior del pedido por parte del Revendedor.", "html": "<p>7.1. El Cliente arma su pedido dentro de la Tienda del Revendedor y lo envía, habitualmente a través de WhatsApp, con el detalle de los productos seleccionados y el total a abonar.</p>\n<p>7.2. Como paso previo obligatorio para completar el pedido, la Plataforma requiere la aceptación expresa de estos Términos por parte del Cliente, conforme lo indicado en el punto 1.2.</p>\n<p>7.3. Una vez enviado el pedido, es el Revendedor quien lo recibe, lo confirma y coordina con el Cliente el pago y la entrega, por los medios y canales que ambos acuerden.</p>"}, {"num": "8", "title": "Pagos y entrega", "body": "8.1. El pago del pedido se realiza directamente entre el Cliente y el Revendedor, por los medios de pago que este último ofrezca (transferencia, efectivo, u otros), sin intervención del Titular ni de la Plataforma en dicho cobro.\n8.2. La entrega de la mercadería es gestionada íntegramente por el Revendedor, quien es responsable de los plazos, la modalidad (envío o retiro) y el estado en que los productos llegan al Cliente.\n8.3. El Titular no procesa pagos entre el Cliente y el Revendedor, no participa en la logística de entrega al Cliente, y no asume responsabilidad alguna por demoras, extravíos, daños o incumplimientos relacionados con el pago o el envío.", "desc": "Establece que el pago y la entrega de la mercadería se gestionan directamente entre el Cliente y el Revendedor, sin intervención del Titular ni de la Plataforma, quien no asume responsabilidad por demoras, extravíos o incumplimientos.", "html": "<p>8.1. El pago del pedido se realiza directamente entre el Cliente y el Revendedor, por los medios de pago que este último ofrezca (transferencia, efectivo, u otros), sin intervención del Titular ni de la Plataforma en dicho cobro.</p>\n<p>8.2. La entrega de la mercadería es gestionada íntegramente por el Revendedor, quien es responsable de los plazos, la modalidad (envío o retiro) y el estado en que los productos llegan al Cliente.</p>\n<p>8.3. El Titular no procesa pagos entre el Cliente y el Revendedor, no participa en la logística de entrega al Cliente, y no asume responsabilidad alguna por demoras, extravíos, daños o incumplimientos relacionados con el pago o el envío.</p>"}, {"num": "9", "title": "Cambios, devoluciones, garantías y defensa del consumidor", "body": "9.1. Todo reclamo relativo a cambios, devoluciones, garantías legales, desistimiento de la compra o disconformidad con el producto recibido debe canalizarse directamente con el Revendedor, quien es el proveedor de los bienes en los términos de la Ley N° 24.240 y el único responsable de atenderlo.\n9.2. El Titular no participa en la resolución de estos reclamos, sin perjuicio de que pueda facilitar, con carácter meramente informativo, los medios de contacto del Revendedor si el Cliente los desconociera.", "desc": "Indica que todo reclamo por cambios, devoluciones o garantías debe canalizarse directamente con el Revendedor, proveedor de los bienes según la Ley N° 24.240, sin que el Titular participe en la resolución de esos reclamos.", "html": "<p>9.1. Todo reclamo relativo a cambios, devoluciones, garantías legales, desistimiento de la compra o disconformidad con el producto recibido debe canalizarse directamente con el Revendedor, quien es el proveedor de los bienes en los términos de la Ley N° 24.240 y el único responsable de atenderlo.</p>\n<p>9.2. El Titular no participa en la resolución de estos reclamos, sin perjuicio de que pueda facilitar, con carácter meramente informativo, los medios de contacto del Revendedor si el Cliente los desconociera.</p>"}, {"num": "10", "title": "Menores de edad", "body": "10.1. Un menor de edad puede utilizar la Plataforma en carácter de Cliente exclusivamente bajo la supervisión de un adulto responsable, quien asumirá la responsabilidad derivada de la compra realizada.\n10.2. Para menores de 16 años, será requisito adicional contar con la autorización expresa de dicho adulto responsable, otorgada por los mecanismos que la Plataforma o el Revendedor dispongan a tal efecto.\n10.3. Si un menor de edad realiza una compra en carácter de Cliente, la responsabilidad por dicha transacción permanece, en los mismos términos previstos en la Sección 5, exclusivamente entre el Revendedor y el Cliente (y, en su caso, el adulto responsable que lo supervisa), sin que ello genere responsabilidad adicional alguna para el Titular.\n10.4. El Titular confía de buena fe en la veracidad de la edad declarada por el Cliente al momento de aceptar estos Términos, y no cuenta con medios propios para verificarla de forma independiente. En consecuencia, el Titular no será responsable si un menor de edad realiza una compra falseando su edad o incumpliendo las condiciones de supervisión y autorización previstas en esta Sección.", "desc": "Regula el uso de la Plataforma por menores de edad como Clientes, exigiendo la supervisión de un adulto responsable y autorización expresa adicional para menores de 16 años, y aclara que el Titular confía de buena fe en la edad declarada.", "html": "<p>10.1. Un menor de edad puede utilizar la Plataforma en carácter de Cliente exclusivamente bajo la supervisión de un adulto responsable, quien asumirá la responsabilidad derivada de la compra realizada.</p>\n<p>10.2. Para menores de 16 años, será requisito adicional contar con la autorización expresa de dicho adulto responsable, otorgada por los mecanismos que la Plataforma o el Revendedor dispongan a tal efecto.</p>\n<p>10.3. Si un menor de edad realiza una compra en carácter de Cliente, la responsabilidad por dicha transacción permanece, en los mismos términos previstos en la Sección 5, exclusivamente entre el Revendedor y el Cliente (y, en su caso, el adulto responsable que lo supervisa), sin que ello genere responsabilidad adicional alguna para el Titular.</p>\n<p>10.4. El Titular confía de buena fe en la veracidad de la edad declarada por el Cliente al momento de aceptar estos Términos, y no cuenta con medios propios para verificarla de forma independiente. En consecuencia, el Titular no será responsable si un menor de edad realiza una compra falseando su edad o incumpliendo las condiciones de supervisión y autorización previstas en esta Sección.</p>"}, {"num": "11", "title": "Propiedad intelectual", "body": "11.1. Todos los derechos de propiedad intelectual e industrial sobre la Plataforma, su diseño, estética, tecnología y la marca \"Revende Ways\" son de titularidad exclusiva del Titular. El acceso a una Tienda no confiere al Cliente derecho alguno sobre dicha propiedad intelectual, más allá del uso de la Tienda para los fines de consulta y compra previstos en estos Términos.\n11.2. Las imágenes, nombres, descripciones y demás contenidos del Catálogo son provistos por el Titular y no podrán ser reproducidos, copiados ni reutilizados por el Cliente fuera del uso normal de la Tienda, sin autorización previa y por escrito.", "desc": "Establece que todos los derechos sobre la Plataforma, su diseño y la marca &quot;Revende Ways&quot; pertenecen al Titular, y que las imágenes y contenidos del Catálogo no pueden reproducirse fuera del uso normal de la Tienda sin autorización.", "html": "<p>11.1. Todos los derechos de propiedad intelectual e industrial sobre la Plataforma, su diseño, estética, tecnología y la marca &quot;Revende Ways&quot; son de titularidad exclusiva del Titular. El acceso a una Tienda no confiere al Cliente derecho alguno sobre dicha propiedad intelectual, más allá del uso de la Tienda para los fines de consulta y compra previstos en estos Términos.</p>\n<p>11.2. Las imágenes, nombres, descripciones y demás contenidos del Catálogo son provistos por el Titular y no podrán ser reproducidos, copiados ni reutilizados por el Cliente fuera del uso normal de la Tienda, sin autorización previa y por escrito.</p>"}, {"num": "12", "title": "Uso aceptable y conductas prohibidas", "body": "El Cliente se compromete a utilizar la Tienda y la Plataforma de buena fe, quedando expresamente prohibido:\n• Proporcionar datos falsos, incompletos o pertenecientes a un tercero al momento de realizar un pedido.\n• Utilizar la Tienda o la Plataforma con fines fraudulentos, ilícitos o contrarios a la moral y las buenas costumbres.\n• Intentar vulnerar, eludir o interferir con los mecanismos de seguridad o funcionamiento técnico de la Plataforma.\n• Extraer, mediante scraping u otro medio automatizado, el Catálogo, precios o datos exhibidos en la Tienda.\n12.2. El incumplimiento de lo anterior podrá derivar en el rechazo del pedido por parte del Revendedor y, en su caso, en las acciones legales que pudieran corresponder.", "desc": "Enumera las conductas prohibidas para el Cliente al utilizar la Tienda y la Plataforma, como proporcionar datos falsos, actuar con fines fraudulentos o hacer scraping del catálogo, con posible rechazo del pedido en caso de incumplimiento.", "html": "<p>El Cliente se compromete a utilizar la Tienda y la Plataforma de buena fe, quedando expresamente prohibido:</p>\n<ul><li>Proporcionar datos falsos, incompletos o pertenecientes a un tercero al momento de realizar un pedido.</li><li>Utilizar la Tienda o la Plataforma con fines fraudulentos, ilícitos o contrarios a la moral y las buenas costumbres.</li><li>Intentar vulnerar, eludir o interferir con los mecanismos de seguridad o funcionamiento técnico de la Plataforma.</li><li>Extraer, mediante scraping u otro medio automatizado, el Catálogo, precios o datos exhibidos en la Tienda.</li></ul>\n<p>12.2. El incumplimiento de lo anterior podrá derivar en el rechazo del pedido por parte del Revendedor y, en su caso, en las acciones legales que pudieran corresponder.</p>"}, {"num": "13", "title": "Exención de responsabilidad del Titular", "body": "13.1. Conforme lo desarrollado en las Secciones 4 y 5, el Titular no es parte de la compraventa entre el Cliente y el Revendedor. En consecuencia, el Titular no responde por: la exactitud de los precios finales fijados por el Revendedor; el cumplimiento de los plazos y modalidades de entrega; el estado, calidad o autenticidad de la mercadería entregada; la atención de cambios, devoluciones o garantías; ni por cualquier otro aspecto de la relación comercial entre el Cliente y el Revendedor.\n13.2. El Titular tampoco garantiza que la Plataforma funcionará de manera ininterrumpida o libre de errores, si bien empleará esfuerzos razonables para asegurar su disponibilidad. En ningún caso el Titular será responsable por daños indirectos, lucro cesante o pérdida de chance derivados del uso o la imposibilidad de uso de la Plataforma, salvo dolo o culpa grave de su parte.\n13.3. La responsabilidad del Titular frente al Cliente, si la hubiera, queda limitada exclusivamente a los aspectos estrictamente técnicos de disponibilidad y funcionamiento de la Plataforma, nunca a la relación comercial de compraventa con el Revendedor.", "desc": "Precisa que el Titular no responde por precios, entregas, calidad de la mercadería, cambios ni devoluciones, no garantiza el funcionamiento ininterrumpido de la Plataforma, y limita su responsabilidad a los aspectos técnicos de disponibilidad.", "html": "<p>13.1. Conforme lo desarrollado en las Secciones 4 y 5, el Titular no es parte de la compraventa entre el Cliente y el Revendedor. En consecuencia, el Titular no responde por: la exactitud de los precios finales fijados por el Revendedor; el cumplimiento de los plazos y modalidades de entrega; el estado, calidad o autenticidad de la mercadería entregada; la atención de cambios, devoluciones o garantías; ni por cualquier otro aspecto de la relación comercial entre el Cliente y el Revendedor.</p>\n<p>13.2. El Titular tampoco garantiza que la Plataforma funcionará de manera ininterrumpida o libre de errores, si bien empleará esfuerzos razonables para asegurar su disponibilidad. En ningún caso el Titular será responsable por daños indirectos, lucro cesante o pérdida de chance derivados del uso o la imposibilidad de uso de la Plataforma, salvo dolo o culpa grave de su parte.</p>\n<p>13.3. La responsabilidad del Titular frente al Cliente, si la hubiera, queda limitada exclusivamente a los aspectos estrictamente técnicos de disponibilidad y funcionamiento de la Plataforma, nunca a la relación comercial de compraventa con el Revendedor.</p>"}, {"num": "14", "title": "Protección de datos personales", "body": "14.1. El tratamiento de los datos personales del Cliente se rige por la Política de Privacidad para Clientes de Revende Ways, la cual forma parte integrante de estos Términos y debe ser leída y aceptada en forma conjunta con estos.\n14.2. Los datos que el Cliente suministra al Revendedor en el marco de un pedido (nombre, contacto, dirección de entrega, entre otros) son tratados por dicho Revendedor bajo su propia responsabilidad, conforme se detalla en la Política de Privacidad para Clientes.", "desc": "Remite a la Política de Privacidad para Clientes, que forma parte integrante de estos Términos, y aclara que los datos suministrados al Revendedor durante un pedido son tratados bajo su propia responsabilidad.", "html": "<p>14.1. El tratamiento de los datos personales del Cliente se rige por la Política de Privacidad para Clientes de Revende Ways, la cual forma parte integrante de estos Términos y debe ser leída y aceptada en forma conjunta con estos.</p>\n<p>14.2. Los datos que el Cliente suministra al Revendedor en el marco de un pedido (nombre, contacto, dirección de entrega, entre otros) son tratados por dicho Revendedor bajo su propia responsabilidad, conforme se detalla en la Política de Privacidad para Clientes.</p>"}, {"num": "15", "title": "Fuerza mayor", "body": "15.1. Ninguna de las partes será responsable por el incumplimiento o retraso en el cumplimiento de sus obligaciones cuando ello obedezca a causas de fuerza mayor o caso fortuito, incluyendo fallas generalizadas de internet, de proveedores de infraestructura en la nube, de servicios de mensajería (WhatsApp/Meta), desastres naturales, actos de gobierno u otros eventos fuera del control razonable de la parte afectada.", "desc": "Exime de responsabilidad a las partes por incumplimientos derivados de causas de fuerza mayor o caso fortuito, incluyendo fallas de internet, de proveedores tecnológicos o de servicios de mensajería.", "html": "<p>15.1. Ninguna de las partes será responsable por el incumplimiento o retraso en el cumplimiento de sus obligaciones cuando ello obedezca a causas de fuerza mayor o caso fortuito, incluyendo fallas generalizadas de internet, de proveedores de infraestructura en la nube, de servicios de mensajería (WhatsApp/Meta), desastres naturales, actos de gobierno u otros eventos fuera del control razonable de la parte afectada.</p>"}, {"num": "16", "title": "Modificaciones a los Términos", "body": "16.1. El Titular podrá modificar estos Términos en cualquier momento. La versión vigente al momento de cada compra será la aplicable a esa transacción. El uso continuado de una Tienda con posterioridad a la publicación de modificaciones implica la aceptación de los nuevos Términos.", "desc": "Establece que el Titular puede modificar estos Términos en cualquier momento, y que la versión vigente al momento de cada compra será la aplicable a esa transacción.", "html": "<p>16.1. El Titular podrá modificar estos Términos en cualquier momento. La versión vigente al momento de cada compra será la aplicable a esa transacción. El uso continuado de una Tienda con posterioridad a la publicación de modificaciones implica la aceptación de los nuevos Términos.</p>"}, {"num": "17", "title": "Legislación aplicable y jurisdicción", "body": "17.1. Estos Términos se rigen por las leyes de la República Argentina. La Plataforma opera en todo el territorio nacional, por lo que Clientes de cualquier provincia del país pueden hacer uso de ella.\n17.2. Para toda controversia derivada de la interpretación, validez, cumplimiento o incumplimiento de estos Términos entre el Cliente y el Titular (circunscripta a los aspectos estrictamente técnicos previstos en la Sección 13), las partes se someten a la jurisdicción de los tribunales ordinarios competentes con asiento en el domicilio legal del Titular (Carlos Casares, Provincia de Buenos Aires), con renuncia expresa a cualquier otro fuero.\n17.3. No obstante, en tanto el Cliente reviste la condición de consumidor o usuario en los términos de la Ley N° 24.240, prevalecerá —a su opción— el fuero judicial correspondiente a su domicilio real, conforme el artículo 36 de dicha ley, tanto para los reclamos que pudiera dirigir al Titular como, en lo que resulte aplicable, para los que dirija al Revendedor.", "desc": "Fija la legislación argentina como aplicable y establece la jurisdicción de los tribunales de Carlos Casares, con la salvedad del fuero que corresponda al domicilio del Cliente conforme la Ley de Defensa del Consumidor.", "html": "<p>17.1. Estos Términos se rigen por las leyes de la República Argentina. La Plataforma opera en todo el territorio nacional, por lo que Clientes de cualquier provincia del país pueden hacer uso de ella.</p>\n<p>17.2. Para toda controversia derivada de la interpretación, validez, cumplimiento o incumplimiento de estos Términos entre el Cliente y el Titular (circunscripta a los aspectos estrictamente técnicos previstos en la Sección 13), las partes se someten a la jurisdicción de los tribunales ordinarios competentes con asiento en el domicilio legal del Titular (Carlos Casares, Provincia de Buenos Aires), con renuncia expresa a cualquier otro fuero.</p>\n<p>17.3. No obstante, en tanto el Cliente reviste la condición de consumidor o usuario en los términos de la Ley N° 24.240, prevalecerá —a su opción— el fuero judicial correspondiente a su domicilio real, conforme el artículo 36 de dicha ley, tanto para los reclamos que pudiera dirigir al Titular como, en lo que resulte aplicable, para los que dirija al Revendedor.</p>"}, {"num": "18", "title": "Disposiciones generales", "body": "18.1. Divisibilidad. Si alguna cláusula de estos Términos fuera declarada nula o inaplicable, ello no afectará la validez de las restantes.\n18.2. Acuerdo íntegro. Estos Términos, junto con la Política de Privacidad para Clientes, constituyen el acuerdo íntegro entre el Cliente y el Titular respecto del uso de la Tienda, sin perjuicio de los términos y condiciones de venta particulares que cada Revendedor pudiera informar en su propia Tienda respecto de la compraventa.\n18.3. Independencia de las partes. Nada en estos Términos debe interpretarse como constitutivo de una relación de dependencia, sociedad, mandato o representación entre el Titular y el Revendedor, ni entre el Titular y el Cliente.", "desc": "Reúne disposiciones sobre divisibilidad de cláusulas, el carácter de acuerdo íntegro de estos Términos junto a la Política de Privacidad, y la independencia de las partes respecto de cualquier relación de dependencia o sociedad.", "html": "<p>18.1. Divisibilidad. Si alguna cláusula de estos Términos fuera declarada nula o inaplicable, ello no afectará la validez de las restantes.</p>\n<p>18.2. Acuerdo íntegro. Estos Términos, junto con la Política de Privacidad para Clientes, constituyen el acuerdo íntegro entre el Cliente y el Titular respecto del uso de la Tienda, sin perjuicio de los términos y condiciones de venta particulares que cada Revendedor pudiera informar en su propia Tienda respecto de la compraventa.</p>\n<p>18.3. Independencia de las partes. Nada en estos Términos debe interpretarse como constitutivo de una relación de dependencia, sociedad, mandato o representación entre el Titular y el Revendedor, ni entre el Titular y el Cliente.</p>"}, {"num": "19", "title": "Contacto", "body": "19.1. Para consultas sobre el funcionamiento de la Plataforma, o para canalizar una inquietud vinculada con una compra realizada, el Cliente podrá utilizar la opción de \"Contacto\" y/o \"Devoluciones y reclamos\" disponible dentro de la Tienda, la cual deriva la comunicación al Revendedor y, cuando corresponda, al Titular.\n19.2. El Titular tiene domicilio legal en la Provincia de Buenos Aires, Argentina. Sus datos identificatorios completos podrán ser suministrados a quien acredite un interés legítimo para requerirlos, a través de los canales de contacto mencionados en el punto 19.1.\nAl aceptar estos Términos y Condiciones y completar una compra, el Cliente confirma que ha leído y comprendido íntegramente este documento, y que acepta en forma absoluta y sin reservas la total responsabilidad que le corresponde, junto con el Revendedor, por la transacción realizada, reconociendo expresamente que dicha transacción se celebra entre dos partes responsables —el Cliente y el Revendedor— y no con el Titular de la Plataforma.", "desc": "Indica los canales de contacto para consultas o reclamos vinculados a una compra, indica el domicilio legal del Titular en la Provincia de Buenos Aires, y cierra con la confirmación de aceptación íntegra de estos Términos por parte del Cliente.", "html": "<p>19.1. Para consultas sobre el funcionamiento de la Plataforma, o para canalizar una inquietud vinculada con una compra realizada, el Cliente podrá utilizar la opción de &quot;Contacto&quot; y/o &quot;Devoluciones y reclamos&quot; disponible dentro de la Tienda, la cual deriva la comunicación al Revendedor y, cuando corresponda, al Titular.</p>\n<p>19.2. El Titular tiene domicilio legal en la Provincia de Buenos Aires, Argentina. Sus datos identificatorios completos podrán ser suministrados a quien acredite un interés legítimo para requerirlos, a través de los canales de contacto mencionados en el punto 19.1.</p>\n<p>Al aceptar estos Términos y Condiciones y completar una compra, el Cliente confirma que ha leído y comprendido íntegramente este documento, y que acepta en forma absoluta y sin reservas la total responsabilidad que le corresponde, junto con el Revendedor, por la transacción realizada, reconociendo expresamente que dicha transacción se celebra entre dos partes responsables —el Cliente y el Revendedor— y no con el Titular de la Plataforma.</p>"}];
+const PRIVACY_DATA = [{"num": "1", "title": "Introducción y responsable del tratamiento", "body": "1.1. La presente Política de Privacidad para Clientes (en adelante, la \"Política\") describe cómo se recopilan, utilizan, almacenan, comparten y protegen los datos personales de quienes compran en una Tienda operada por un Revendedor dentro de la plataforma Revende Ways (en adelante, la \"Plataforma\"), en cumplimiento de la Ley N° 25.326 de Protección de los Datos Personales de la República Argentina, su Decreto Reglamentario N° 1558/2001, y demás normativa concordante.\n1.2. El responsable del tratamiento de los datos personales procesados técnicamente por la Plataforma es Gustavo Nicolás Pignanelli, persona física, CUIT 23-38916201-9, con domicilio legal en la Provincia de Buenos Aires, Argentina. Las consultas o solicitudes relativas al tratamiento de datos personales podrán dirigirse a dicho responsable a través de la opción de \"Contacto\" de la Plataforma.\n1.3. Esta Política forma parte integrante de los Términos y Condiciones de Compra para Clientes. La aceptación de dichos Términos al momento del checkout implica la aceptación expresa de esta Política.\n1.4. La Plataforma opera en todo el territorio de la República Argentina, por lo que los principios y derechos descriptos en esta Política resultan aplicables a los Clientes de cualquier provincia del país.", "desc": "Presenta a Gustavo Nicolás Pignanelli como responsable del tratamiento de los datos personales de los Clientes, aclara que esta Política forma parte de los Términos de Compra y que aplica a Clientes de todo el país.", "html": "<p>1.1. La presente Política de Privacidad para Clientes (en adelante, la &quot;Política&quot;) describe cómo se recopilan, utilizan, almacenan, comparten y protegen los datos personales de quienes compran en una Tienda operada por un Revendedor dentro de la plataforma Revende Ways (en adelante, la &quot;Plataforma&quot;), en cumplimiento de la Ley N° 25.326 de Protección de los Datos Personales de la República Argentina, su Decreto Reglamentario N° 1558/2001, y demás normativa concordante.</p>\n<p>1.2. El responsable del tratamiento de los datos personales procesados técnicamente por la Plataforma es Gustavo Nicolás Pignanelli, persona física, CUIT 23-38916201-9, con domicilio legal en la Provincia de Buenos Aires, Argentina. Las consultas o solicitudes relativas al tratamiento de datos personales podrán dirigirse a dicho responsable a través de la opción de &quot;Contacto&quot; de la Plataforma.</p>\n<p>1.3. Esta Política forma parte integrante de los Términos y Condiciones de Compra para Clientes. La aceptación de dichos Términos al momento del checkout implica la aceptación expresa de esta Política.</p>\n<p>1.4. La Plataforma opera en todo el territorio de la República Argentina, por lo que los principios y derechos descriptos en esta Política resultan aplicables a los Clientes de cualquier provincia del país.</p>"}, {"num": "2", "title": "Datos personales que recopilamos", "body": "Cuando el Cliente consulta o compra en una Tienda, pueden recopilarse las siguientes categorías de datos:\n2.1 Registro de evidencia de aceptación de los Términos y Condiciones\nCuando el Cliente marca el checkbox de aceptación de los Términos y Condiciones y confirma el envío de su pedido, la Plataforma genera y conserva, junto con dicho pedido, un registro único que sirve como evidencia de esa aceptación, con la finalidad de acreditarla ante cualquier controversia. Dicho registro incluye las siguientes categorías de datos:\n• Identificador único del registro de aceptación, vinculado al identificador del pedido (ID de pedido) al que corresponde.\n• Usuario autenticado (UID) cuando la compra se realiza con una cuenta identificada, nombre, apellido y teléfono suministrados en el pedido.\n• Código del Revendedor a través de cuya Tienda se realizó la compra.\n• Dirección IP pública desde la cual se realizó la aceptación, obtenida por medios propios de la infraestructura de la Plataforma (Cloudflare Workers), y no a través de servicios externos del navegador.\n• Fecha y hora de la aceptación, junto con su timestamp completo en formato ISO 8601.\n• User-Agent completo del navegador utilizado, y el sistema operativo y navegador que puedan derivarse de dicho User-Agent.\n• Versión exacta de los Términos y Condiciones aceptados (por ejemplo, \"v1.0\").\n• Estado del checkbox de aceptación (aceptado: verdadero).\n2.1.1. Este registro solo se genera cuando el pedido fue enviado correctamente, el checkbox de aceptación estaba marcado y el pedido se guardó de forma exitosa, quedando así vinculado el pedido a la versión concreta de los Términos bajo la cual fue realizado. Si el checkbox no fue marcado, el Titular no habilita el envío del pedido. Este registro se conserva conforme los plazos indicados en la Sección 10.", "desc": "Detalla las categorías de datos recopilados —identificación, entrega, del pedido, técnicos y el registro de aceptación de los Términos— junto con su origen, incluyendo el detalle completo del registro de evidencia de aceptación.", "html": "<p>Cuando el Cliente consulta o compra en una Tienda, pueden recopilarse las siguientes categorías de datos:</p>\n<table class=\"legal-table\"><thead><tr><th>Categoría</th><th>Datos incluidos</th><th>Origen</th></tr></thead><tbody>\n<tr><td>Datos de identificación y contacto</td><td>Nombre, apellido, número de teléfono/WhatsApp</td><td>Suministrados por el Cliente al armar y enviar su pedido</td></tr>\n<tr><td>Datos de entrega</td><td>Dirección de envío o punto de retiro (cuando el Revendedor lo solicite)</td><td>Suministrados por el Cliente</td></tr>\n<tr><td>Datos del pedido</td><td>Productos seleccionados, cantidades, precios, total de la compra, ID del pedido, código del Revendedor asociado</td><td>Generados al armar el pedido en la Tienda</td></tr>\n<tr><td>Datos técnicos</td><td>Información de navegación, dispositivo y sesión dentro de la Tienda</td><td>Recopilados automáticamente por la Plataforma</td></tr>\n<tr><td>Registro de aceptación de Términos</td><td>Ver detalle completo en el punto 2.1</td><td>Generado automáticamente al aceptar los Términos y enviar el pedido</td></tr>\n</tbody></table>\n<h4>2.1 Registro de evidencia de aceptación de los Términos y Condiciones</h4>\n<p>Cuando el Cliente marca el checkbox de aceptación de los Términos y Condiciones y confirma el envío de su pedido, la Plataforma genera y conserva, junto con dicho pedido, un registro único que sirve como evidencia de esa aceptación, con la finalidad de acreditarla ante cualquier controversia. Dicho registro incluye las siguientes categorías de datos:</p>\n<ul><li>Identificador único del registro de aceptación, vinculado al identificador del pedido (ID de pedido) al que corresponde.</li><li>Usuario autenticado (UID) cuando la compra se realiza con una cuenta identificada, nombre, apellido y teléfono suministrados en el pedido.</li><li>Código del Revendedor a través de cuya Tienda se realizó la compra.</li><li>Dirección IP pública desde la cual se realizó la aceptación, obtenida por medios propios de la infraestructura de la Plataforma (Cloudflare Workers), y no a través de servicios externos del navegador.</li><li>Fecha y hora de la aceptación, junto con su timestamp completo en formato ISO 8601.</li><li>User-Agent completo del navegador utilizado, y el sistema operativo y navegador que puedan derivarse de dicho User-Agent.</li><li>Versión exacta de los Términos y Condiciones aceptados (por ejemplo, &quot;v1.0&quot;).</li><li>Estado del checkbox de aceptación (aceptado: verdadero).</li></ul>\n<p>2.1.1. Este registro solo se genera cuando el pedido fue enviado correctamente, el checkbox de aceptación estaba marcado y el pedido se guardó de forma exitosa, quedando así vinculado el pedido a la versión concreta de los Términos bajo la cual fue realizado. Si el checkbox no fue marcado, el Titular no habilita el envío del pedido. Este registro se conserva conforme los plazos indicados en la Sección 10.</p>"}, {"num": "3", "title": "Finalidad del tratamiento de datos", "body": "Los datos personales del Cliente son tratados con las siguientes finalidades:\n• Gestionar y dar curso al pedido realizado en la Tienda del Revendedor, incluyendo su comunicación a este último para la coordinación del pago y la entrega.\n• Mejorar la experiencia de compra del Cliente dentro de la Plataforma, incluyendo la personalización y el correcto funcionamiento de la Tienda.\n• Conectar al Cliente con herramientas, nuevos productos y novedades de la Plataforma o de la Tienda en la que compró, que puedan resultar de su interés.\n• Enviar comunicaciones comerciales y publicitarias sobre productos, novedades, promociones u ofertas de la Plataforma o de los Revendedores, en las condiciones y con los límites descriptos en la Sección 7.\n• Prevenir el fraude y garantizar la seguridad e integridad de la Plataforma.\n• Cumplir con obligaciones legales, regulatorias y requerimientos de autoridades competentes.\n• Dejar constancia, mediante el registro de evidencia descripto en el punto 2.1, de la aceptación de estos Términos y de esta Política, a los fines de su acreditación ante cualquier controversia.", "desc": "Enumera las finalidades del tratamiento: gestionar el pedido, mejorar la experiencia de compra, conectar al Cliente con novedades, enviar comunicaciones comerciales, prevenir el fraude, cumplir obligaciones legales y acreditar la aceptación de los Términos.", "html": "<p>Los datos personales del Cliente son tratados con las siguientes finalidades:</p>\n<ul><li>Gestionar y dar curso al pedido realizado en la Tienda del Revendedor, incluyendo su comunicación a este último para la coordinación del pago y la entrega.</li><li>Mejorar la experiencia de compra del Cliente dentro de la Plataforma, incluyendo la personalización y el correcto funcionamiento de la Tienda.</li><li>Conectar al Cliente con herramientas, nuevos productos y novedades de la Plataforma o de la Tienda en la que compró, que puedan resultar de su interés.</li><li>Enviar comunicaciones comerciales y publicitarias sobre productos, novedades, promociones u ofertas de la Plataforma o de los Revendedores, en las condiciones y con los límites descriptos en la Sección 7.</li><li>Prevenir el fraude y garantizar la seguridad e integridad de la Plataforma.</li><li>Cumplir con obligaciones legales, regulatorias y requerimientos de autoridades competentes.</li><li>Dejar constancia, mediante el registro de evidencia descripto en el punto 2.1, de la aceptación de estos Términos y de esta Política, a los fines de su acreditación ante cualquier controversia.</li></ul>"}, {"num": "4", "title": "Base legal del tratamiento", "body": "4.1. El tratamiento de los datos necesarios para gestionar el pedido se funda en la ejecución de las gestiones previas a la compra solicitadas por el propio Cliente, y en la aceptación expresa de los Términos y de esta Política al momento del checkout.\n4.2. El tratamiento de los datos con fines de comunicación comercial y publicitaria, descripto en la Sección 7, se funda en el consentimiento del Cliente, quien es informado de dicha finalidad en esta misma Política y puede oponerse u optar por no recibir esas comunicaciones en cualquier momento, sin costo y sin que ello afecte la gestión de sus pedidos.", "desc": "Explica que el tratamiento de los datos para gestionar el pedido se basa en las gestiones solicitadas por el Cliente y la aceptación de los Términos, y que el tratamiento con fines comerciales se funda en su consentimiento, revocable en cualquier momento.", "html": "<p>4.1. El tratamiento de los datos necesarios para gestionar el pedido se funda en la ejecución de las gestiones previas a la compra solicitadas por el propio Cliente, y en la aceptación expresa de los Términos y de esta Política al momento del checkout.</p>\n<p>4.2. El tratamiento de los datos con fines de comunicación comercial y publicitaria, descripto en la Sección 7, se funda en el consentimiento del Cliente, quien es informado de dicha finalidad en esta misma Política y puede oponerse u optar por no recibir esas comunicaciones en cualquier momento, sin costo y sin que ello afecte la gestión de sus pedidos.</p>"}, {"num": "5", "title": "Cómo obtenemos los datos", "body": "5.1. Los datos se obtienen directamente del Cliente, al completar su pedido en la Tienda y al comunicarse con el Revendedor (habitualmente por WhatsApp), así como de forma automática a través del funcionamiento técnico de la Plataforma.", "desc": "Aclara que los datos se obtienen directamente del Cliente al completar su pedido y comunicarse con el Revendedor, así como automáticamente a través del funcionamiento técnico de la Plataforma.", "html": "<p>5.1. Los datos se obtienen directamente del Cliente, al completar su pedido en la Tienda y al comunicarse con el Revendedor (habitualmente por WhatsApp), así como de forma automática a través del funcionamiento técnico de la Plataforma.</p>"}, {"num": "6", "title": "Datos tratados por el Revendedor", "body": "6.1. Los datos que el Cliente suministra directamente al Revendedor durante la coordinación del pago y la entrega (por ejemplo, por WhatsApp) son recopilados y tratados por dicho Revendedor bajo su propia responsabilidad, en su calidad de responsable independiente respecto de esa etapa de la relación comercial.\n6.2. El Titular recomienda a los Revendedores dar cumplimiento a la normativa de protección de datos personales en el tratamiento de la información de sus Clientes, sin que el Titular asuma responsabilidad por dicho tratamiento, conforme lo previsto en los Términos y Condiciones.", "desc": "Aclara que los datos suministrados directamente al Revendedor durante la coordinación de pago y entrega son tratados por este bajo su propia responsabilidad, recomendando el cumplimiento de la normativa de protección de datos.", "html": "<p>6.1. Los datos que el Cliente suministra directamente al Revendedor durante la coordinación del pago y la entrega (por ejemplo, por WhatsApp) son recopilados y tratados por dicho Revendedor bajo su propia responsabilidad, en su calidad de responsable independiente respecto de esa etapa de la relación comercial.</p>\n<p>6.2. El Titular recomienda a los Revendedores dar cumplimiento a la normativa de protección de datos personales en el tratamiento de la información de sus Clientes, sin que el Titular asuma responsabilidad por dicho tratamiento, conforme lo previsto en los Términos y Condiciones.</p>"}, {"num": "7", "title": "Comunicaciones comerciales y publicidad", "body": "7.1. El Titular podrá utilizar los datos de contacto del Cliente (en particular, su número de WhatsApp) para enviarle comunicaciones de carácter comercial y publicitario, tales como novedades de productos, nuevas herramientas, promociones u ofertas de la Plataforma o de los Revendedores que puedan resultar de su interés, conforme la finalidad informada en la Sección 3.\n7.1 bis. Con el mismo alcance, el Titular podrá compartir determinados datos de contacto del Cliente con proveedores de tecnología publicitaria y redes sociales, con la finalidad de mostrarle publicidad y contenido de la Plataforma o de sus Revendedores más relevante en dichos entornos externos. Este tratamiento se realiza únicamente respecto de quienes no hayan ejercido su derecho de oposición conforme el punto 7.2, y en ningún caso condiciona el acceso o uso de la Plataforma ni la posibilidad de completar una compra.\n7.2. Este tratamiento se realiza dando cumplimiento a la Ley N° 25.326 y a la normativa de protección al consumidor aplicable, bajo las siguientes condiciones:\n• El Cliente es informado de esta finalidad en el momento de aceptar los Términos y esta Política, de forma previa a la recepción de cualquier comunicación comercial.\n• El Cliente puede oponerse al envío de comunicaciones comerciales y publicitarias, o revocar su consentimiento, en cualquier momento y en forma gratuita, respondiendo \"BAJA\" (o instrucción equivalente) al canal por el que las reciba, o a través de la opción de \"Contacto\" de la Plataforma, sin que ello afecte la gestión de sus pedidos ya realizados.\n• El Titular no vende, cede ni comparte los datos de contacto del Cliente con terceros ajenos a la Plataforma con fines publicitarios propios de esos terceros; las comunicaciones comerciales que el Cliente reciba se originan en el Titular o en el Revendedor con quien compró, no en anunciantes externos.\n• El Cliente puede, en todo momento, solicitar información sobre qué datos suyos se utilizan con esta finalidad, conforme los derechos previstos en la Sección 11.\n7.3. La oposición del Cliente al envío de comunicaciones comerciales no afecta el envío de comunicaciones operativas estrictamente necesarias para la gestión de un pedido en curso (por ejemplo, la confirmación o el seguimiento de una compra ya realizada).", "desc": "Regula el uso del número de WhatsApp del Cliente para comunicaciones comerciales y su posible compartición con proveedores de tecnología publicitaria, garantizando siempre el derecho a oposición gratuita mediante la palabra &quot;BAJA&quot;.", "html": "<p>7.1. El Titular podrá utilizar los datos de contacto del Cliente (en particular, su número de WhatsApp) para enviarle comunicaciones de carácter comercial y publicitario, tales como novedades de productos, nuevas herramientas, promociones u ofertas de la Plataforma o de los Revendedores que puedan resultar de su interés, conforme la finalidad informada en la Sección 3.</p>\n<p>7.1 bis. Con el mismo alcance, el Titular podrá compartir determinados datos de contacto del Cliente con proveedores de tecnología publicitaria y redes sociales, con la finalidad de mostrarle publicidad y contenido de la Plataforma o de sus Revendedores más relevante en dichos entornos externos. Este tratamiento se realiza únicamente respecto de quienes no hayan ejercido su derecho de oposición conforme el punto 7.2, y en ningún caso condiciona el acceso o uso de la Plataforma ni la posibilidad de completar una compra.</p>\n<p>7.2. Este tratamiento se realiza dando cumplimiento a la Ley N° 25.326 y a la normativa de protección al consumidor aplicable, bajo las siguientes condiciones:</p>\n<ul><li>El Cliente es informado de esta finalidad en el momento de aceptar los Términos y esta Política, de forma previa a la recepción de cualquier comunicación comercial.</li><li>El Cliente puede oponerse al envío de comunicaciones comerciales y publicitarias, o revocar su consentimiento, en cualquier momento y en forma gratuita, respondiendo &quot;BAJA&quot; (o instrucción equivalente) al canal por el que las reciba, o a través de la opción de &quot;Contacto&quot; de la Plataforma, sin que ello afecte la gestión de sus pedidos ya realizados.</li><li>El Titular no vende, cede ni comparte los datos de contacto del Cliente con terceros ajenos a la Plataforma con fines publicitarios propios de esos terceros; las comunicaciones comerciales que el Cliente reciba se originan en el Titular o en el Revendedor con quien compró, no en anunciantes externos.</li><li>El Cliente puede, en todo momento, solicitar información sobre qué datos suyos se utilizan con esta finalidad, conforme los derechos previstos en la Sección 11.</li></ul>\n<p>7.3. La oposición del Cliente al envío de comunicaciones comerciales no afecta el envío de comunicaciones operativas estrictamente necesarias para la gestión de un pedido en curso (por ejemplo, la confirmación o el seguimiento de una compra ya realizada).</p>"}, {"num": "8", "title": "Compartición de datos con terceros y proveedores", "body": "8.1. Para el funcionamiento técnico de la Plataforma, se utilizan los siguientes proveedores tecnológicos, que actúan como encargados del tratamiento:\n8.2. El Titular no vende, alquiler ni comercializa los datos personales del Cliente a terceros. Podrá divulgarlos cuando así lo requiera la ley, una orden judicial o una autoridad administrativa competente.", "desc": "Lista los proveedores tecnológicos que procesan datos por cuenta del Titular —Firebase, Cloudflare Workers, WhatsApp y Google Fonts— y aclara que el Titular no vende ni alquila los datos personales del Cliente.", "html": "<p>8.1. Para el funcionamiento técnico de la Plataforma, se utilizan los siguientes proveedores tecnológicos, que actúan como encargados del tratamiento:</p>\n<table class=\"legal-table\"><thead><tr><th>Proveedor</th><th>Función</th><th>Datos involucrados</th></tr></thead><tbody>\n<tr><td>Google Firebase</td><td>Almacenamiento en la nube de los datos del pedido</td><td>Datos del pedido y de contacto suministrados por el Cliente</td></tr>\n<tr><td>Cloudflare Workers</td><td>Microservicio propio de consulta y normalización de pedidos del Cliente final</td><td>Datos del pedido</td></tr>\n<tr><td>WhatsApp (Meta Platforms, Inc.)</td><td>Canal de comunicación entre el Cliente y el Revendedor</td><td>Número de teléfono, contenido del mensaje de pedido</td></tr>\n<tr><td>Google Fonts</td><td>Provisión de tipografías web</td><td>Dirección IP (tratamiento técnico estándar del proveedor)</td></tr>\n</tbody></table>\n<p>8.2. El Titular no vende, alquiler ni comercializa los datos personales del Cliente a terceros. Podrá divulgarlos cuando así lo requiera la ley, una orden judicial o una autoridad administrativa competente.</p>"}, {"num": "9", "title": "Transferencias internacionales de datos", "body": "9.1. Dado que los proveedores tecnológicos utilizados (Google Firebase, Cloudflare, Meta/WhatsApp) operan con infraestructura distribuida internacionalmente, los datos del Cliente pueden ser almacenados o procesados en servidores ubicados fuera de la República Argentina, procurando el Titular que dicho tratamiento se realice conforme a estándares de protección adecuados.", "desc": "Reconoce que, por la infraestructura distribuida de los proveedores tecnológicos utilizados, los datos del Cliente pueden almacenarse o procesarse en servidores ubicados fuera de la República Argentina.", "html": "<p>9.1. Dado que los proveedores tecnológicos utilizados (Google Firebase, Cloudflare, Meta/WhatsApp) operan con infraestructura distribuida internacionalmente, los datos del Cliente pueden ser almacenados o procesados en servidores ubicados fuera de la República Argentina, procurando el Titular que dicho tratamiento se realice conforme a estándares de protección adecuados.</p>"}, {"num": "10", "title": "Plazo de conservación y seguridad de la información", "body": "10.1. Los datos del Cliente se conservarán durante el tiempo necesario para gestionar el pedido y atender eventuales reclamos, y por el plazo adicional que exijan las obligaciones legales, contables o impositivas aplicables.\n10.2. El Titular implementa medidas técnicas y organizativas razonables para proteger los datos del Cliente. No obstante, ningún sistema es completamente infalible, por lo que el Titular no puede garantizar su seguridad absoluta, sin perjuicio de su obligación de notificar oportunamente cualquier incidente de seguridad relevante.", "desc": "Establece que los datos se conservan mientras sean necesarios para gestionar el pedido y por los plazos legales adicionales, e implementa medidas de seguridad razonables, aunque sin poder garantizar una seguridad absoluta.", "html": "<p>10.1. Los datos del Cliente se conservarán durante el tiempo necesario para gestionar el pedido y atender eventuales reclamos, y por el plazo adicional que exijan las obligaciones legales, contables o impositivas aplicables.</p>\n<p>10.2. El Titular implementa medidas técnicas y organizativas razonables para proteger los datos del Cliente. No obstante, ningún sistema es completamente infalible, por lo que el Titular no puede garantizar su seguridad absoluta, sin perjuicio de su obligación de notificar oportunamente cualquier incidente de seguridad relevante.</p>"}, {"num": "11", "title": "Derechos del Cliente sobre sus datos personales", "body": "11.1. Conforme la Ley N° 25.326, el Cliente tiene derecho a acceder, rectificar, actualizar y suprimir sus datos personales, a oponerse a su tratamiento para finalidades específicas (en particular, las comunicaciones comerciales descriptas en la Sección 7), y a revocar el consentimiento prestado, en cualquier momento y en forma gratuita.\n11.2. Estos derechos podrán ejercerse dirigiéndose al Titular a través de la opción de \"Contacto\" de la Plataforma, acreditando la identidad del solicitante. El Titular dará respuesta dentro de los plazos establecidos por la normativa aplicable.\n11.3. La Agencia de Acceso a la Información Pública, Órgano de Control de la Ley N° 25.326, atiende las denuncias y reclamos de quienes resulten afectados en sus derechos por incumplimiento de dicha normativa.", "desc": "Detalla los derechos que la Ley N° 25.326 reconoce al Cliente: acceso, rectificación, actualización, supresión, oposición y revocación del consentimiento, y cómo ejercerlos ante el Titular o la Agencia de Acceso a la Información Pública.", "html": "<p>11.1. Conforme la Ley N° 25.326, el Cliente tiene derecho a acceder, rectificar, actualizar y suprimir sus datos personales, a oponerse a su tratamiento para finalidades específicas (en particular, las comunicaciones comerciales descriptas en la Sección 7), y a revocar el consentimiento prestado, en cualquier momento y en forma gratuita.</p>\n<p>11.2. Estos derechos podrán ejercerse dirigiéndose al Titular a través de la opción de &quot;Contacto&quot; de la Plataforma, acreditando la identidad del solicitante. El Titular dará respuesta dentro de los plazos establecidos por la normativa aplicable.</p>\n<p>11.3. La Agencia de Acceso a la Información Pública, Órgano de Control de la Ley N° 25.326, atiende las denuncias y reclamos de quienes resulten afectados en sus derechos por incumplimiento de dicha normativa.</p>"}, {"num": "12", "title": "Cookies y tecnologías similares", "body": "12.1. La Plataforma puede utilizar almacenamiento local del navegador y mecanismos equivalentes para mantener el estado de la sesión de compra y optimizar el funcionamiento técnico de la Tienda, sin fines de perfilado publicitario por parte de terceros ajenos a la Plataforma.", "desc": "Explica que la Plataforma puede utilizar almacenamiento local del navegador para mantener el estado de la sesión de compra, sin fines de perfilado publicitario por parte de terceros ajenos a la Plataforma.", "html": "<p>12.1. La Plataforma puede utilizar almacenamiento local del navegador y mecanismos equivalentes para mantener el estado de la sesión de compra y optimizar el funcionamiento técnico de la Tienda, sin fines de perfilado publicitario por parte de terceros ajenos a la Plataforma.</p>"}, {"num": "13", "title": "Menores de edad", "body": "13.1. Un menor de edad puede comprar en una Tienda exclusivamente bajo la supervisión de un adulto responsable, conforme lo previsto en la Sección 10 de los Términos y Condiciones de Compra para Clientes. Para menores de 16 años se requiere, adicionalmente, la autorización expresa de dicho adulto.\n13.2. El Titular trata los datos de edad declarados por el Cliente de buena fe y sin medios propios de verificación independiente, por lo que no será responsable si dichos datos resultan falsos o inexactos, sin perjuicio de las medidas que pueda adoptar una vez detectada dicha situación.", "desc": "Reitera que un menor puede comprar solo bajo supervisión de un adulto, con autorización expresa adicional para menores de 16 años, y que el Titular trata los datos de edad declarados de buena fe, sin medios propios de verificación.", "html": "<p>13.1. Un menor de edad puede comprar en una Tienda exclusivamente bajo la supervisión de un adulto responsable, conforme lo previsto en la Sección 10 de los Términos y Condiciones de Compra para Clientes. Para menores de 16 años se requiere, adicionalmente, la autorización expresa de dicho adulto.</p>\n<p>13.2. El Titular trata los datos de edad declarados por el Cliente de buena fe y sin medios propios de verificación independiente, por lo que no será responsable si dichos datos resultan falsos o inexactos, sin perjuicio de las medidas que pueda adoptar una vez detectada dicha situación.</p>"}, {"num": "14", "title": "Modificaciones a esta Política", "body": "14.1. El Titular podrá modificar esta Política en cualquier momento, comunicando los cambios sustanciales por los medios que la Plataforma disponga. El uso continuado de una Tienda con posterioridad a la publicación de modificaciones implica su aceptación.", "desc": "Establece que el Titular puede modificar esta Política en cualquier momento, comunicando los cambios sustanciales, y que el uso continuado de una Tienda tras su publicación implica la aceptación de los cambios.", "html": "<p>14.1. El Titular podrá modificar esta Política en cualquier momento, comunicando los cambios sustanciales por los medios que la Plataforma disponga. El uso continuado de una Tienda con posterioridad a la publicación de modificaciones implica su aceptación.</p>"}, {"num": "15", "title": "Autoridad de control", "body": "15.1. La autoridad de control en materia de protección de datos personales en la República Argentina es la Agencia de Acceso a la Información Pública.", "desc": "Identifica a la Agencia de Acceso a la Información Pública como autoridad de control en materia de protección de datos personales en la República Argentina.", "html": "<p>15.1. La autoridad de control en materia de protección de datos personales en la República Argentina es la Agencia de Acceso a la Información Pública.</p>"}, {"num": "16", "title": "Contacto", "body": "16.1. Para el ejercicio de los derechos descriptos en esta Política, o para darse de baja de comunicaciones comerciales, el Cliente podrá utilizar la opción de \"Contacto\" disponible dentro de la Plataforma.\nAl aceptar los Términos y Condiciones de Compra y completar un pedido, el Cliente confirma que ha leído y comprendido íntegramente esta Política, y presta su consentimiento libre, expreso e informado para el tratamiento de sus datos personales conforme a lo aquí descripto, incluyendo el uso de sus datos de contacto con fines de comunicación comercial, del cual podrá darse de baja en cualquier momento.", "desc": "Indica el canal de &quot;Contacto&quot; para ejercer los derechos descriptos o darse de baja de comunicaciones comerciales, y cierra con la confirmación de que el Cliente presta su consentimiento informado al completar un pedido.", "html": "<p>16.1. Para el ejercicio de los derechos descriptos en esta Política, o para darse de baja de comunicaciones comerciales, el Cliente podrá utilizar la opción de &quot;Contacto&quot; disponible dentro de la Plataforma.</p>\n<p>Al aceptar los Términos y Condiciones de Compra y completar un pedido, el Cliente confirma que ha leído y comprendido íntegramente esta Política, y presta su consentimiento libre, expreso e informado para el tratamiento de sus datos personales conforme a lo aquí descripto, incluyendo el uso de sus datos de contacto con fines de comunicación comercial, del cual podrá darse de baja en cualquier momento.</p>"}];
+
+const DEVOLUTIONS_DATA = [{"num": "0", "title": "Naturaleza del documento", "body": "0.1. La presente Política de Devoluciones y Garantías (en adelante, la \"Política\") constituye un acuerdo de condiciones aplicable simultáneamente a las cuatro partes que intervienen en el ecosistema de Revende Ways: el Titular de la Plataforma, el Proveedor Mayorista, el Revendedor y el Cliente. Cada una de estas partes queda automáticamente obligada por esta Política al aceptar los Términos y Condiciones correspondientes a su rol (Términos y Condiciones para Revendedores, Términos y Condiciones de Compra para Clientes, o Términos y Condiciones para Proveedores Mayoristas, según corresponda), documentos que incorporan esta Política por referencia expresa.\n0.2. Esta Política regula exclusivamente lo relativo a devoluciones, cambios y garantías de los productos comercializados a través de la Plataforma. En todo lo no previsto aquí, rigen los Términos y Condiciones específicos de cada rol.", "desc": "Explica que esta Política es un acuerdo de condiciones que vincula simultáneamente al Titular, el Proveedor Mayorista, el Revendedor y el Cliente, incorporado por referencia en los Términos y Condiciones de cada rol, y que regula exclusivamente devoluciones, cambios y garantías.", "html": "<p>0.1. La presente Política de Devoluciones y Garantías (en adelante, la &quot;Política&quot;) constituye un acuerdo de condiciones aplicable simultáneamente a las cuatro partes que intervienen en el ecosistema de Revende Ways: el Titular de la Plataforma, el Proveedor Mayorista, el Revendedor y el Cliente. Cada una de estas partes queda automáticamente obligada por esta Política al aceptar los Términos y Condiciones correspondientes a su rol (Términos y Condiciones para Revendedores, Términos y Condiciones de Compra para Clientes, o Términos y Condiciones para Proveedores Mayoristas, según corresponda), documentos que incorporan esta Política por referencia expresa.</p><p>0.2. Esta Política regula exclusivamente lo relativo a devoluciones, cambios y garantías de los productos comercializados a través de la Plataforma. En todo lo no previsto aquí, rigen los Términos y Condiciones específicos de cada rol.</p>"}, {"num": "1", "title": "Objeto y alcance", "body": "1.1. Esta Política establece: (i) las causales por las cuales se acepta una devolución o cambio de producto; (ii) el procedimiento y el formulario que debe completarse para gestionarla; (iii) la responsabilidad que le corresponde a cada parte en dicho proceso; y (iv) los supuestos expresamente excluidos de devolución, cambio o responsabilidad.\n1.2. Esta Política respeta y no puede, bajo ninguna interpretación, restringir los derechos irrenunciables que la Ley N° 24.240 de Defensa del Consumidor reconoce al Cliente en su carácter de consumidor. En caso de conflicto entre una cláusula de esta Política y una norma de orden público en materia de defensa del consumidor, prevalece esta última.", "desc": "Establece el objeto de la Política —causales de devolución, procedimiento, responsabilidades y exclusiones— y aclara que en ningún caso puede restringir los derechos irrenunciables del Cliente consumidor conforme la Ley de Defensa del Consumidor.", "html": "<p>1.1. Esta Política establece: (i) las causales por las cuales se acepta una devolución o cambio de producto; (ii) el procedimiento y el formulario que debe completarse para gestionarla; (iii) la responsabilidad que le corresponde a cada parte en dicho proceso; y (iv) los supuestos expresamente excluidos de devolución, cambio o responsabilidad.</p><p>1.2. Esta Política respeta y no puede, bajo ninguna interpretación, restringir los derechos irrenunciables que la Ley N° 24.240 de Defensa del Consumidor reconoce al Cliente en su carácter de consumidor. En caso de conflicto entre una cláusula de esta Política y una norma de orden público en materia de defensa del consumidor, prevalece esta última.</p>"}, {"num": "2", "title": "Definiciones", "body": "A los efectos de esta Política, se entiende por:\n• Titular: el operador de la Plataforma Revende Ways, cuya función en esta Política se limita a gestionar la relación con el Proveedor Mayorista y con el Revendedor, conforme la cadena de responsabilidad descripta en la Sección 3.\n• Proveedor Mayorista: la persona física o jurídica que provee al Titular los productos exhibidos en el Catálogo de la Plataforma, y que resulta responsable de la calidad y el correcto estado de fabricación de dichos productos.\n• Revendedor: la persona que opera su propia Tienda dentro de la Plataforma y vende los productos del Catálogo a sus Clientes, siendo el único responsable de atender sus reclamos de devolución, conforme la Sección 7.\n• Cliente: la persona que compra un producto en la Tienda de un Revendedor.\n• Formulario de Devolución: el formulario que el Revendedor debe completar ante el Titular para gestionar una devolución, con los datos detallados en la Sección 6.\n• Producto Defectuoso: todo producto que presenta una falla de fabricación, llega roto, o es distinto o equivocado respecto de lo efectivamente pedido por el Cliente, sin que este último haya prestado consentimiento previo para dicha diferencia.", "desc": "Define los conceptos clave utilizados en el documento: Titular, Proveedor Mayorista, Revendedor, Cliente, Formulario de Devolución y Producto Defectuoso.", "html": "<p>A los efectos de esta Política, se entiende por:</p><ul><li>Titular: el operador de la Plataforma Revende Ways, cuya función en esta Política se limita a gestionar la relación con el Proveedor Mayorista y con el Revendedor, conforme la cadena de responsabilidad descripta en la Sección 3.</li><li>Proveedor Mayorista: la persona física o jurídica que provee al Titular los productos exhibidos en el Catálogo de la Plataforma, y que resulta responsable de la calidad y el correcto estado de fabricación de dichos productos.</li><li>Revendedor: la persona que opera su propia Tienda dentro de la Plataforma y vende los productos del Catálogo a sus Clientes, siendo el único responsable de atender sus reclamos de devolución, conforme la Sección 7.</li><li>Cliente: la persona que compra un producto en la Tienda de un Revendedor.</li><li>Formulario de Devolución: el formulario que el Revendedor debe completar ante el Titular para gestionar una devolución, con los datos detallados en la Sección 6.</li><li>Producto Defectuoso: todo producto que presenta una falla de fabricación, llega roto, o es distinto o equivocado respecto de lo efectivamente pedido por el Cliente, sin que este último haya prestado consentimiento previo para dicha diferencia.</li></ul>"}, {"num": "3", "title": "Cadena de responsabilidad", "body": "3.1. El Titular gestiona exclusivamente su relación con el Proveedor Mayorista y con el Revendedor. El Titular no gestiona en forma directa la relación entre el Revendedor y su Cliente.\n3.2. El Revendedor gestiona exclusivamente su relación con sus propios Clientes, siendo el único responsable de atender, frente a ellos, cualquier reclamo de devolución, cambio o garantía.\n3.3. En consecuencia, todo reclamo de devolución de un Cliente debe canalizarse, en primer término y de forma obligatoria, ante el Revendedor que le vendió el producto, y no ante el Titular ni ante el Proveedor Mayorista.\n3.4. Esta cadena de responsabilidad (Proveedor Mayorista–Titular–Revendedor–Cliente) es la misma descripta en los Términos y Condiciones de cada rol, y esta Política no la modifica, sino que la desarrolla específicamente para el supuesto de devoluciones.", "desc": "Describe la cadena de responsabilidad Proveedor Mayorista–Titular–Revendedor–Cliente, estableciendo que todo reclamo de devolución debe canalizarse primero ante el Revendedor y no ante el Titular ni el Proveedor Mayorista.", "html": "<p>3.1. El Titular gestiona exclusivamente su relación con el Proveedor Mayorista y con el Revendedor. El Titular no gestiona en forma directa la relación entre el Revendedor y su Cliente.</p><p>3.2. El Revendedor gestiona exclusivamente su relación con sus propios Clientes, siendo el único responsable de atender, frente a ellos, cualquier reclamo de devolución, cambio o garantía.</p><p>3.3. En consecuencia, todo reclamo de devolución de un Cliente debe canalizarse, en primer término y de forma obligatoria, ante el Revendedor que le vendió el producto, y no ante el Titular ni ante el Proveedor Mayorista.</p><p>3.4. Esta cadena de responsabilidad (Proveedor Mayorista–Titular–Revendedor–Cliente) es la misma descripta en los Términos y Condiciones de cada rol, y esta Política no la modifica, sino que la desarrolla específicamente para el supuesto de devoluciones.</p>"}, {"num": "4", "title": "Causales de devolución o cambio aceptadas", "body": "Un producto podrá devolverse o cambiarse únicamente cuando se verifique alguna de las siguientes causales:\n• Falla de fabricación del producto.\n• El producto llega roto o dañado al momento de la entrega.\n• El producto entregado es equivocado o distinto del efectivamente pedido por el Cliente, sin que este haya prestado su consentimiento previo para recibir un producto diferente.\n4.2. Fuera de estas causales, y sin perjuicio del derecho de revocación legal descripto en la Sección 5, no se aceptarán devoluciones ni cambios.", "desc": "Enumera las únicas causales que habilitan una devolución o cambio: falla de fabricación, producto roto o dañado, o producto equivocado sin consentimiento previo del Cliente, aclarando que fuera de estos casos no se aceptan devoluciones.", "html": "<p>Un producto podrá devolverse o cambiarse únicamente cuando se verifique alguna de las siguientes causales:</p><ul><li>Falla de fabricación del producto.</li><li>El producto llega roto o dañado al momento de la entrega.</li><li>El producto entregado es equivocado o distinto del efectivamente pedido por el Cliente, sin que este haya prestado su consentimiento previo para recibir un producto diferente.</li></ul><p>4.2. Fuera de estas causales, y sin perjuicio del derecho de revocación legal descripto en la Sección 5, no se aceptarán devoluciones ni cambios.</p>"}, {"num": "5", "title": "Derecho de revocación legal (arrepentimiento)", "body": "5.1. Independientemente de las causales previstas en la Sección 4, el Cliente que compra a distancia goza del derecho irrenunciable de revocar su aceptación dentro de los diez (10) días hábiles contados desde la entrega del producto, sin necesidad de expresar causa y sin costo alguno, conforme lo establece el artículo 34 de la Ley N° 24.240. Este derecho debe ser atendido por el Revendedor, en su calidad de vendedor efectivo del producto, conforme la cadena de responsabilidad de la Sección 3.\n5.2. El derecho de revocación previsto en este punto es independiente y no debe confundirse con las exclusiones de responsabilidad por arrepentimiento fuera de plazo previstas en la Sección 12 de esta Política, las cuales operan únicamente una vez vencido el plazo de diez (10) días hábiles aquí establecido, o cuando el producto ya no se encuentre en las condiciones originales por causas atribuibles al Cliente.\n5.3. Ni el Titular ni el Proveedor Mayorista son parte de la relación de consumo con el Cliente, por lo que la gestión y el costo de este derecho de revocación recaen exclusivamente sobre el Revendedor, sin perjuicio de que este último pueda, a su vez, gestionar el cambio del producto conforme el procedimiento de esta Política si correspondiera una causal de las previstas en la Sección 4.", "desc": "Reconoce el derecho legal e irrenunciable del Cliente a revocar su compra dentro de los diez días hábiles de recibido el producto conforme la Ley de Defensa del Consumidor, cuya gestión y costo recaen sobre el Revendedor.", "html": "<p>5.1. Independientemente de las causales previstas en la Sección 4, el Cliente que compra a distancia goza del derecho irrenunciable de revocar su aceptación dentro de los diez (10) días hábiles contados desde la entrega del producto, sin necesidad de expresar causa y sin costo alguno, conforme lo establece el artículo 34 de la Ley N° 24.240. Este derecho debe ser atendido por el Revendedor, en su calidad de vendedor efectivo del producto, conforme la cadena de responsabilidad de la Sección 3.</p><p>5.2. El derecho de revocación previsto en este punto es independiente y no debe confundirse con las exclusiones de responsabilidad por arrepentimiento fuera de plazo previstas en la Sección 12 de esta Política, las cuales operan únicamente una vez vencido el plazo de diez (10) días hábiles aquí establecido, o cuando el producto ya no se encuentre en las condiciones originales por causas atribuibles al Cliente.</p><p>5.3. Ni el Titular ni el Proveedor Mayorista son parte de la relación de consumo con el Cliente, por lo que la gestión y el costo de este derecho de revocación recaen exclusivamente sobre el Revendedor, sin perjuicio de que este último pueda, a su vez, gestionar el cambio del producto conforme el procedimiento de esta Política si correspondiera una causal de las previstas en la Sección 4.</p>"}, {"num": "6", "title": "Procedimiento de devolución y Formulario de Devolución", "body": "6.1. Verificada alguna de las causales de la Sección 4, el Revendedor debe completar el Formulario de Devolución puesto a su disposición por el Titular, con al menos los siguientes datos:\n• Nombre y código de vendedor del Revendedor.\n• Datos de contacto del Revendedor.\n• Identificación del pedido y del producto involucrado.\n• Descripción y evidencia fotográfica de la falla, rotura o error detectado.\n• Causal invocada, conforme la Sección 4.\n6.2. Sin la presentación de este Formulario correctamente completado, el Titular no está en condiciones de gestionar el reemplazo del producto ante el Proveedor Mayorista, conforme lo previsto en la Sección 8.", "desc": "Detalla los datos que debe completar el Revendedor en el Formulario de Devolución ante el Titular, y aclara que sin dicho formulario el Titular no puede gestionar el reemplazo del producto.", "html": "<p>6.1. Verificada alguna de las causales de la Sección 4, el Revendedor debe completar el Formulario de Devolución puesto a su disposición por el Titular, con al menos los siguientes datos:</p><ul><li>Nombre y código de vendedor del Revendedor.</li><li>Datos de contacto del Revendedor.</li><li>Identificación del pedido y del producto involucrado.</li><li>Descripción y evidencia fotográfica de la falla, rotura o error detectado.</li><li>Causal invocada, conforme la Sección 4.</li></ul><p>6.2. Sin la presentación de este Formulario correctamente completado, el Titular no está en condiciones de gestionar el reemplazo del producto ante el Proveedor Mayorista, conforme lo previsto en la Sección 8.</p>"}, {"num": "7", "title": "Responsabilidad total del Revendedor en la gestión de devoluciones", "body": "7.1. El Revendedor es responsable en su totalidad de atender la gestión de devolución de sus Clientes, incluyendo: recibir el reclamo, evaluar si corresponde a una de las causales de la Sección 4 o al derecho de revocación de la Sección 5, comunicarse con el Cliente, y completar el Formulario de Devolución ante el Titular cuando corresponda.\n7.2. El incumplimiento por parte del Revendedor de esta obligación —incluyendo la falta de atención al Cliente o la falta de presentación del Formulario— es de su exclusiva responsabilidad, conforme lo previsto en la Sección 8.", "desc": "Establece que el Revendedor es responsable en su totalidad de recibir, evaluar y gestionar los reclamos de devolución de sus Clientes, incluyendo la presentación del Formulario ante el Titular.", "html": "<p>7.1. El Revendedor es responsable en su totalidad de atender la gestión de devolución de sus Clientes, incluyendo: recibir el reclamo, evaluar si corresponde a una de las causales de la Sección 4 o al derecho de revocación de la Sección 5, comunicarse con el Cliente, y completar el Formulario de Devolución ante el Titular cuando corresponda.</p><p>7.2. El incumplimiento por parte del Revendedor de esta obligación —incluyendo la falta de atención al Cliente o la falta de presentación del Formulario— es de su exclusiva responsabilidad, conforme lo previsto en la Sección 8.</p>"}, {"num": "8", "title": "Ausencia de responsabilidad del Titular ante la falta de Formulario", "body": "8.1. El Titular no tiene responsabilidad alguna si un Revendedor no completa el Formulario de Devolución, o lo completa de forma incorrecta o incompleta. En dicho supuesto, el Titular no gestionará el reemplazo del producto ante el Proveedor Mayorista, y la resolución del reclamo del Cliente queda a cargo exclusivo del Revendedor.", "desc": "Aclara que el Titular no tiene responsabilidad alguna si el Revendedor no completa correctamente el Formulario de Devolución, quedando la resolución del reclamo a exclusivo cargo del Revendedor.", "html": "<p>8.1. El Titular no tiene responsabilidad alguna si un Revendedor no completa el Formulario de Devolución, o lo completa de forma incorrecta o incompleta. En dicho supuesto, el Titular no gestionará el reemplazo del producto ante el Proveedor Mayorista, y la resolución del reclamo del Cliente queda a cargo exclusivo del Revendedor.</p>"}, {"num": "9", "title": "Vía de reclamo del Cliente contra el Revendedor", "body": "9.1. Si el Revendedor no atiende adecuadamente la necesidad de devolución o cambio de su Cliente, este último puede denunciar dicha situación ante el Titular a través de la opción de \"Contacto\" y/o \"Devoluciones y reclamos\" de la Plataforma.\n9.2. La responsabilidad por la falta de atención recae exclusivamente sobre el Revendedor denunciado, quien debe hacerse responsable frente a su Cliente. El Titular podrá, ante reclamos reiterados o fundados, suspender o dar de baja la cuenta del Revendedor incumplidor, conforme lo previsto en los Términos y Condiciones para Revendedores.", "desc": "Habilita al Cliente a denunciar ante el Titular la falta de atención de un Revendedor, aclarando que la responsabilidad recae exclusivamente sobre este último, sin perjuicio de que el Titular pueda suspender su cuenta.", "html": "<p>9.1. Si el Revendedor no atiende adecuadamente la necesidad de devolución o cambio de su Cliente, este último puede denunciar dicha situación ante el Titular a través de la opción de &quot;Contacto&quot; y/o &quot;Devoluciones y reclamos&quot; de la Plataforma.</p><p>9.2. La responsabilidad por la falta de atención recae exclusivamente sobre el Revendedor denunciado, quien debe hacerse responsable frente a su Cliente. El Titular podrá, ante reclamos reiterados o fundados, suspender o dar de baja la cuenta del Revendedor incumplidor, conforme lo previsto en los Términos y Condiciones para Revendedores.</p>"}, {"num": "10", "title": "Responsabilidad del Proveedor Mayorista", "body": "10.1. El Proveedor Mayorista se compromete y se hace responsable en su totalidad de despachar el producto de cambio correspondiente, una vez que el Titular le remita el Formulario de Devolución y, cuando corresponda, el producto defectuoso, conforme la causal verificada en la Sección 4.\n10.2. El Proveedor Mayorista es responsable por las fallas de fabricación de los productos que provee, en los términos de la garantía legal prevista en los artículos 11 a 18 de la Ley N° 24.240.", "desc": "Establece que el Proveedor Mayorista es responsable de despachar el producto de cambio y de las fallas de fabricación, conforme la garantía legal de la Ley de Defensa del Consumidor.", "html": "<p>10.1. El Proveedor Mayorista se compromete y se hace responsable en su totalidad de despachar el producto de cambio correspondiente, una vez que el Titular le remita el Formulario de Devolución y, cuando corresponda, el producto defectuoso, conforme la causal verificada en la Sección 4.</p><p>10.2. El Proveedor Mayorista es responsable por las fallas de fabricación de los productos que provee, en los términos de la garantía legal prevista en los artículos 11 a 18 de la Ley N° 24.240.</p>"}, {"num": "11", "title": "Responsabilidad del Titular en el traslado del producto defectuoso", "body": "11.1. El Titular se compromete a hacer llegar al Proveedor Mayorista el producto dañado que el Revendedor le remita junto con el Formulario de Devolución, a los efectos de que el Proveedor Mayorista pueda verificar la falla y proceder al despacho del producto de cambio conforme la Sección 10.", "desc": "Indica que el Titular se compromete a trasladar el producto defectuoso remitido por el Revendedor hacia el Proveedor Mayorista para su verificación y despacho del cambio.", "html": "<p>11.1. El Titular se compromete a hacer llegar al Proveedor Mayorista el producto dañado que el Revendedor le remita junto con el Formulario de Devolución, a los efectos de que el Proveedor Mayorista pueda verificar la falla y proceder al despacho del producto de cambio conforme la Sección 10.</p>"}, {"num": "12", "title": "Exclusiones de responsabilidad", "body": "12.1. Daños o sustracciones causados por terceros. Una vez entregados los productos al Revendedor, ni el Titular ni el Proveedor Mayorista se harán cargo de sustracciones o daños sufridos por causas ajenas a la fabricación o al despacho original del producto, incluyendo hechos de terceros.\n12.2. Daños posteriores a una entrega conforme. Si el Revendedor entregó el producto en condiciones óptimas y el Cliente sufre posteriormente una rotura accidental o un daño por mal uso, ni el Revendedor, ni el Titular, ni el Proveedor Mayorista son responsables por dicho daño, el cual queda fuera de las causales de devolución previstas en la Sección 4.\n12.3. Arrepentimiento fuera de plazo. Ninguna de las partes —Proveedor Mayorista, Titular ni Revendedor— será responsable por el arrepentimiento del Cliente una vez vencido el plazo legal de diez (10) días hábiles previsto en la Sección 5, ni por el arrepentimiento motivado en un daño causado por el propio Cliente al producto. Una vez realizado el pedido y vencido dicho plazo, el Cliente es responsable en su totalidad por su decisión de compra, sin perjuicio de la garantía legal por defectos de fabricación no detectables al momento de la entrega, que se rige por la Sección 4 y por la garantía legal de la Ley N° 24.240.\n12.4. Manipulación indebida. Queda excluida de esta Política toda devolución motivada en la manipulación, uso indebido, instalación incorrecta o modificación del producto por parte del Cliente, del Revendedor, o de un tercero ajeno al Proveedor Mayorista.\n12.5. Reclamos infundados o de mala fe. El Titular y el Proveedor Mayorista se reservan el derecho de rechazar, con fundamento, todo reclamo de devolución que no se ajuste a las causales de esta Política, que resulte contradictorio con la evidencia presentada, o que evidencie mala fe por parte de quien lo formula, sin perjuicio del derecho del Cliente a recurrir a los organismos de defensa del consumidor si considerara vulnerado un derecho legal.", "desc": "Enumera los supuestos excluidos de devolución o responsabilidad: daños o sustracciones por terceros, daños posteriores a una entrega conforme, arrepentimiento fuera de plazo, manipulación indebida y reclamos infundados o de mala fe.", "html": "<p>12.1. Daños o sustracciones causados por terceros. Una vez entregados los productos al Revendedor, ni el Titular ni el Proveedor Mayorista se harán cargo de sustracciones o daños sufridos por causas ajenas a la fabricación o al despacho original del producto, incluyendo hechos de terceros.</p><p>12.2. Daños posteriores a una entrega conforme. Si el Revendedor entregó el producto en condiciones óptimas y el Cliente sufre posteriormente una rotura accidental o un daño por mal uso, ni el Revendedor, ni el Titular, ni el Proveedor Mayorista son responsables por dicho daño, el cual queda fuera de las causales de devolución previstas en la Sección 4.</p><p>12.3. Arrepentimiento fuera de plazo. Ninguna de las partes —Proveedor Mayorista, Titular ni Revendedor— será responsable por el arrepentimiento del Cliente una vez vencido el plazo legal de diez (10) días hábiles previsto en la Sección 5, ni por el arrepentimiento motivado en un daño causado por el propio Cliente al producto. Una vez realizado el pedido y vencido dicho plazo, el Cliente es responsable en su totalidad por su decisión de compra, sin perjuicio de la garantía legal por defectos de fabricación no detectables al momento de la entrega, que se rige por la Sección 4 y por la garantía legal de la Ley N° 24.240.</p><p>12.4. Manipulación indebida. Queda excluida de esta Política toda devolución motivada en la manipulación, uso indebido, instalación incorrecta o modificación del producto por parte del Cliente, del Revendedor, o de un tercero ajeno al Proveedor Mayorista.</p><p>12.5. Reclamos infundados o de mala fe. El Titular y el Proveedor Mayorista se reservan el derecho de rechazar, con fundamento, todo reclamo de devolución que no se ajuste a las causales de esta Política, que resulte contradictorio con la evidencia presentada, o que evidencie mala fe por parte de quien lo formula, sin perjuicio del derecho del Cliente a recurrir a los organismos de defensa del consumidor si considerara vulnerado un derecho legal.</p>"}, {"num": "13", "title": "Costos asociados a la devolución", "body": "13.1. Cuando la devolución obedezca a alguna de las causales previstas en la Sección 4 (falla de fabricación, producto roto, o producto equivocado o distinto sin consentimiento previo), los costos de flete o envío asociados al retiro del producto defectuoso y al despacho del producto de cambio son asumidos por el Proveedor Mayorista, sin costo para el Cliente ni para el Revendedor.\n13.2. Cuando la devolución obedezca al derecho de revocación legal previsto en la Sección 5, los costos se rigen por lo dispuesto en el artículo 34 de la Ley N° 24.240 y su reglamentación.", "desc": "Define quién asume los costos de flete: el Proveedor Mayorista cuando la devolución obedece a una causal de la Sección 4, y lo dispuesto por la Ley de Defensa del Consumidor cuando se trata del derecho de revocación.", "html": "<p>13.1. Cuando la devolución obedezca a alguna de las causales previstas en la Sección 4 (falla de fabricación, producto roto, o producto equivocado o distinto sin consentimiento previo), los costos de flete o envío asociados al retiro del producto defectuoso y al despacho del producto de cambio son asumidos por el Proveedor Mayorista, sin costo para el Cliente ni para el Revendedor.</p><p>13.2. Cuando la devolución obedezca al derecho de revocación legal previsto en la Sección 5, los costos se rigen por lo dispuesto en el artículo 34 de la Ley N° 24.240 y su reglamentación.</p>"}, {"num": "14", "title": "Plazos para reclamar", "body": "14.1. El Cliente debe informar al Revendedor cualquier falla, rotura o error detectado en el producto dentro de las 48 horas de recibido, a fin de facilitar la verificación de que el defecto es de origen y no sobrevenido. Ello no obsta a los plazos de garantía legal previstos en la Ley N° 24.240, que resultan más extensos y se aplican en lo pertinente.", "desc": "Fija en 48 horas el plazo para que el Cliente informe al Revendedor cualquier falla detectada, sin perjuicio de los plazos de garantía legal más extensos previstos en la Ley de Defensa del Consumidor.", "html": "<p>14.1. El Cliente debe informar al Revendedor cualquier falla, rotura o error detectado en el producto dentro de las 48 horas de recibido, a fin de facilitar la verificación de que el defecto es de origen y no sobrevenido. Ello no obsta a los plazos de garantía legal previstos en la Ley N° 24.240, que resultan más extensos y se aplican en lo pertinente.</p>"}, {"num": "15", "title": "Vigencia y modificación de esta Política", "body": "15.1. El Titular podrá modificar esta Política en cualquier momento, comunicando los cambios sustanciales por los medios que la Plataforma disponga. La versión vigente al momento de cada compra o cada alta de Proveedor Mayorista será la aplicable a dicha relación.", "desc": "Establece que el Titular puede modificar esta Política en cualquier momento, comunicando los cambios sustanciales, siendo aplicable la versión vigente al momento de cada compra o alta de Proveedor Mayorista.", "html": "<p>15.1. El Titular podrá modificar esta Política en cualquier momento, comunicando los cambios sustanciales por los medios que la Plataforma disponga. La versión vigente al momento de cada compra o cada alta de Proveedor Mayorista será la aplicable a dicha relación.</p>"}, {"num": "16", "title": "Aceptación por las partes", "body": "16.1. Esta Política se entiende automáticamente aceptada por cada parte al momento de aceptar los Términos y Condiciones correspondientes a su rol: el Revendedor, al aceptar los Términos y Condiciones para Revendedores; el Cliente, al aceptar los Términos y Condiciones de Compra al finalizar su pedido; y el Proveedor Mayorista, al aceptar los Términos y Condiciones para Proveedores Mayoristas. La aceptación de los Términos respectivos implica la aceptación plena de esta Política.", "desc": "Indica que esta Política se acepta automáticamente al aceptar los Términos y Condiciones correspondientes al rol de cada parte: Revendedor, Cliente o Proveedor Mayorista.", "html": "<p>16.1. Esta Política se entiende automáticamente aceptada por cada parte al momento de aceptar los Términos y Condiciones correspondientes a su rol: el Revendedor, al aceptar los Términos y Condiciones para Revendedores; el Cliente, al aceptar los Términos y Condiciones de Compra al finalizar su pedido; y el Proveedor Mayorista, al aceptar los Términos y Condiciones para Proveedores Mayoristas. La aceptación de los Términos respectivos implica la aceptación plena de esta Política.</p>"}, {"num": "17", "title": "Legislación aplicable y jurisdicción", "body": "17.1. Esta Política se rige por las leyes de la República Argentina, y en particular por la Ley N° 24.240 de Defensa del Consumidor en todo lo relativo a los derechos del Cliente. Para las controversias entre el Titular, el Proveedor Mayorista y el Revendedor, resulta aplicable la cláusula de jurisdicción prevista en los Términos y Condiciones para Revendedores y en los Términos y Condiciones para Proveedores Mayoristas, respectivamente. Para las controversias en las que el Cliente revista la condición de consumidor, prevalece el fuero de su domicilio real conforme el artículo 36 de la Ley N° 24.240.", "desc": "Fija la legislación argentina como aplicable, en particular la Ley de Defensa del Consumidor para los derechos del Cliente, remitiendo a las cláusulas de jurisdicción de los Términos de cada rol y al fuero del domicilio del consumidor.", "html": "<p>17.1. Esta Política se rige por las leyes de la República Argentina, y en particular por la Ley N° 24.240 de Defensa del Consumidor en todo lo relativo a los derechos del Cliente. Para las controversias entre el Titular, el Proveedor Mayorista y el Revendedor, resulta aplicable la cláusula de jurisdicción prevista en los Términos y Condiciones para Revendedores y en los Términos y Condiciones para Proveedores Mayoristas, respectivamente. Para las controversias en las que el Cliente revista la condición de consumidor, prevalece el fuero de su domicilio real conforme el artículo 36 de la Ley N° 24.240.</p>"}];
+const GROUP_SIZE = 2;
+
+function buildDoc(data, prefix){
+  const tocEl = document.getElementById(prefix+'-toc');
+  const secEl = document.getElementById(prefix+'-sections');
+  const revealEl = document.getElementById(prefix+'-reveal');
+  const previewEl = document.getElementById(prefix+'-preview');
+
+  previewEl.textContent = data[0].num + '. ' + data[0].title + ' — ' + data[0].body.split('\n')[0].slice(0,110) + '…';
+
+  // TOC
+  data.forEach(s=>{
+    const li = document.createElement('li');
+    li.innerHTML = `<a href="#${prefix}-sec-${s.num}" data-jump="${prefix}-${s.num}"><span class="n">${s.num}.</span><span>${s.title}</span></a>`;
+    tocEl.appendChild(li);
+  });
+
+  // Sections in groups
+  const groups = [];
+  for(let i=0;i<data.length;i+=GROUP_SIZE){ groups.push(data.slice(i,i+GROUP_SIZE)); }
+
+  groups.forEach((grp, gi)=>{
+    const gEl = document.createElement('div');
+    gEl.className = 'group' + (gi===0?'':' collapsed');
+    gEl.id = `${prefix}-group-${gi}`;
+    grp.forEach(s=>{
+      const sEl = document.createElement('div');
+      sEl.className = 'section-block';
+      sEl.id = `${prefix}-sec-${s.num}`;
+      sEl.innerHTML = `<h3><span class="num">${s.num}.</span>${s.title}</h3>${s.html}`;
+      gEl.appendChild(sEl);
+    });
+    secEl.appendChild(gEl);
+  });
+
+  let shown = 1;
+  function renderReveal(){
+    revealEl.innerHTML = '';
+    if(shown < groups.length){
+      const btn = document.createElement('button');
+      btn.className = 'reveal-btn';
+      btn.innerHTML = `Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`;
+      btn.onclick = ()=>{
+        document.getElementById(`${prefix}-group-${shown}`).classList.remove('collapsed');
+        shown++;
+        renderReveal();
+      };
+      revealEl.appendChild(btn);
+    } else {
+      const sig = document.createElement('div');
+      sig.className = 'signature-block';
+      sig.textContent = data === TERMS_DATA
+        ? 'Al aceptar estos Términos y Condiciones y completar una compra, el Cliente confirma que ha leído y comprendido íntegramente este documento, y acepta la responsabilidad que le corresponde, junto con el Revendedor, por la transacción realizada.'
+        : data === PRIVACY_DATA
+        ? 'Al aceptar los Términos y Condiciones de Compra y completar un pedido, el Cliente confirma que ha leído y comprendido íntegramente esta Política, y presta su consentimiento libre, expreso e informado para el tratamiento de sus datos personales conforme a lo aquí descripto.'
+        : 'Esta Política de Devoluciones y Garantías forma parte integrante de los Términos y Condiciones de cada rol de la Plataforma Revende Ways, y su aceptación es condición para operar como Revendedor, comprar como Cliente, o proveer productos como Proveedor Mayorista.';
+      revealEl.appendChild(sig);
+    }
+  }
+  renderReveal();
+
+  return { showUpTo(num){
+    // find group index containing this section num, reveal all groups up to it
+    const idx = data.findIndex(s=>s.num===num);
+    const gIdx = Math.floor(idx/GROUP_SIZE);
+    while(shown <= gIdx){
+      const g = document.getElementById(`${prefix}-group-${shown}`);
+      if(g) g.classList.remove('collapsed');
+      shown++;
+    }
+    renderReveal();
+  }};
+}
+
+const termsCtl = buildDoc(TERMS_DATA, 'terms');
+const privacyCtl = buildDoc(PRIVACY_DATA, 'privacy');
+const devolutionsCtl = buildDoc(DEVOLUTIONS_DATA, 'devolutions');
+
+// Ribbon toggle
+document.querySelectorAll('.ribbon-head').forEach(h=>{
+  h.addEventListener('click', ()=>{
+    document.getElementById(h.dataset.toggle).classList.toggle('open');
+  });
+});
+
+// TOC jump: ensure ribbon open + group revealed, then scroll
+function jumpTo(prefix, num){
+  const ribbon = document.getElementById(`ribbon-${prefix}`);
+  ribbon.classList.add('open');
+  ({terms: termsCtl, privacy: privacyCtl, devolutions: devolutionsCtl})[prefix].showUpTo(num);
+  requestAnimationFrame(()=>{
+    setTimeout(()=>{
+      const target = document.getElementById(`${prefix}-sec-${num}`);
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      target.style.transition='background .6s ease';
+      target.style.background = 'var(--blue-soft)';
+      setTimeout(()=>{ target.style.background=''; }, 1200);
+    }, 60);
+  });
+}
+
+document.addEventListener('click', (e)=>{
+  const a = e.target.closest('[data-jump]');
+  if(a){
+    e.preventDefault();
+    const [prefix, num] = a.dataset.jump.split('-');
+    jumpTo(prefix, num);
+  }
+});
+
+// ============ DRAWER ============
+const drawer = document.getElementById('drawer');
+const overlay = document.getElementById('overlay');
+function openDrawer(){ drawer.classList.add('show'); overlay.classList.add('show'); }
+function closeDrawerFn(){ drawer.classList.remove('show'); overlay.classList.remove('show'); }
+document.getElementById('openDrawer').addEventListener('click', openDrawer);
+document.getElementById('closeDrawer').addEventListener('click', closeDrawerFn);
+overlay.addEventListener('click', closeDrawerFn);
+
+document.querySelectorAll('.drawer-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    document.querySelectorAll('.drawer-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.drawer-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
+  });
+});
+
+function buildMenu(data, panelId, prefix){
+  const panel = document.getElementById(panelId);
+  data.forEach(s=>{
+    const item = document.createElement('div');
+    item.className = 'menu-item';
+    item.innerHTML = `
+      <div class="menu-item-head">
+        <span class="n">${s.num}.</span>
+        <span class="t">${s.title}</span>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+      </div>
+      <div class="menu-item-desc">
+        <p>${s.desc}</p>
+        <a class="goto-link" data-jump="${prefix}-${s.num}">
+          Ir al punto
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    `;
+    item.querySelector('.menu-item-head').addEventListener('click', ()=>{
+      item.classList.toggle('open');
+    });
+    panel.appendChild(item);
+  });
+}
+buildMenu(TERMS_DATA, 'panel-terms', 'terms');
+buildMenu(PRIVACY_DATA, 'panel-privacy', 'privacy');
+buildMenu(DEVOLUTIONS_DATA, 'panel-devolutions', 'devolutions');
+
+// When "Ir al punto" clicked inside drawer, also close it
+document.addEventListener('click', (e)=>{
+  const a = e.target.closest('.goto-link');
+  if(a) closeDrawerFn();
+});
+</script>
+</body>
+</html>
