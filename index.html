@@ -378,6 +378,72 @@
 
     footer{padding:22px 16px; font-size:11px;}
   }
+  /* ============ COMPACTO EN PANTALLAS CHICAS (solo agregado) ============ */
+  @media (max-width:640px){
+    html{-webkit-text-size-adjust:100%;}
+    body{font-size:14px;}
+    .topbar{padding:9px 12px; gap:8px;}
+    .brand{gap:8px; font-size:14px; white-space:nowrap; min-width:0;}
+    .brand .mark{width:26px; height:26px; font-size:11.5px; border-radius:4px; flex-shrink:0;}
+    .brand .sub{font-size:8.5px; letter-spacing:.9px; margin-top:0; white-space:nowrap;}
+    .brand > div:last-child{line-height:1.15; white-space:nowrap;}
+    .menu-btn{padding:7px 11px; font-size:11.5px; gap:6px; border-radius:6px; white-space:nowrap; flex-shrink:0; letter-spacing:.1px;}
+    .menu-btn svg{width:13px; height:13px;}
+    .hero{padding:26px 14px 18px;}
+    .hero .eyebrow{font-size:9.5px; letter-spacing:1.1px; margin-bottom:12px; gap:6px;}
+    .hero .eyebrow::before,.hero .eyebrow::after{width:14px;}
+    .hero h1{font-size:19px; margin:0 0 8px; line-height:1.25;}
+    .hero p.lede{font-size:12.5px; line-height:1.5;}
+    .docs-wrap{padding:0 12px 36px; gap:10px;}
+    .ribbon-head{padding:12px 14px; gap:10px;}
+    .ribbon-head .idx{font-size:9.5px; padding:2px 6px; letter-spacing:.6px;}
+    .ribbon-head h2{font-size:14.5px; margin:0 0 2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1.25;}
+    .ribbon-head .preview{font-size:11.5px;}
+    .ribbon-head .chevron{width:24px; height:24px;}
+    .ribbon-head .chevron svg{width:11px; height:11px;}
+    .ribbon-body-inner{padding:16px 14px 4px;}
+    .doc-meta{font-size:11px; gap:6px 16px; padding-bottom:12px; margin-bottom:12px;}
+    .toc-title{font-size:12px; margin:0 0 8px;}
+    .toc-list{margin-bottom:18px; padding:4px;}
+    .toc-list li a{font-size:12px; padding:6px 8px; gap:8px;}
+    .toc-list li a .n{font-size:11.5px;}
+    .section-block{padding:16px 0;}
+    .section-block h3{font-size:15px; margin:0 0 8px; gap:8px;}
+    .section-block h3 .num{font-size:12px;}
+    .section-block p{font-size:13px; line-height:1.55; margin:0 0 9px;}
+    .section-block h4{font-size:11.5px; margin:12px 0 6px;}
+    .section-block li{font-size:12.5px; margin-bottom:5px;}
+    .section-block ul{padding-left:17px;}
+    .reveal-wrap{padding:4px 0 16px;}
+    .reveal-btn{font-size:11.5px; padding:7px 16px;}
+    .signature-block{padding:12px 14px; font-size:12px;}
+    .drawer{width:340px;}
+    .drawer-head{padding:14px 16px 12px;}
+    .drawer-head h3{font-size:15px; margin:0 0 2px;}
+    .drawer-head p{font-size:11px;}
+    .drawer-close{width:26px; height:26px;}
+    .drawer-tab{padding:10px 4px; font-size:10.5px; letter-spacing:0;}
+    .menu-item-head{padding:10px 16px; gap:9px;}
+    .menu-item-head .n{font-size:11.5px; width:20px;}
+    .menu-item-head .t{font-size:12px;}
+    .menu-item-desc{padding:0 16px;}
+    .menu-item.open .menu-item-desc{padding:0 16px 12px;}
+    .menu-item-desc p{font-size:11.5px; line-height:1.55;}
+    .goto-link{font-size:11px;}
+    footer{padding:18px 14px; font-size:10.5px;}
+    footer .fname{font-size:12px; margin-bottom:4px;}
+  }
+  .hero p.lede + p.lede{}
+  @media (max-width:640px){ .hero p.lede[style]{font-size:11.5px !important; padding-left:9px !important; margin-top:10px !important; line-height:1.5; text-align:left;} }
+  @media (max-width:400px){
+    .brand{font-size:13px;}
+    .brand .sub{font-size:8px;}
+    .menu-btn{padding:6px 9px; font-size:11px;}
+    .ribbon-head .idx{display:none;}
+    .ribbon-head h2{font-size:13.5px;}
+    .hero .eyebrow{font-size:8.5px; letter-spacing:.5px; white-space:nowrap;}
+    .hero .eyebrow::before,.hero .eyebrow::after{display:none;}
+  }
 </style>
 </head>
 <body>
@@ -400,9 +466,6 @@
   <div class="eyebrow">Versión 1.1 — vigente desde el 29 de julio de 2026</div>
   <h1>Nuestros Términos, Privacidad y Devoluciones</h1>
   <p class="lede">Toda la información legal que rige el uso de la plataforma Revende Ways, presentada en su texto íntegro. Seleccioná un documento para desplegarlo, o abrí el índice lateral para ver una descripción de cada punto.</p>
-  <p class="lede" style="font-size:14px;opacity:0.85;border-left:3px solid var(--blue-accent, #2563a6);padding-left:12px;margin-top:14px;">
-    <strong>Nota de revisión (Versión 1.1):</strong> se corrigió el plazo de arrepentimiento del Cliente en la Política de Devoluciones y Garantías, que pasa de "diez (10) días hábiles" a <strong>diez (10) días corridos</strong>, conforme el artículo 34 de la Ley N.° 24.240. Se aclaró además que este derecho no constituye un período de prueba y se incorporó la referencia al "botón de arrepentimiento" (Disposición N.° 954/2025).
-  </p>
 </div>
 
 <div class="docs-wrap">
@@ -421,7 +484,7 @@
       <div class="ribbon-body-inner">
         <div class="doc-meta">
           <div><strong>Documento:</strong> Términos y Condiciones de Uso</div>
-          <div><strong>Versión:</strong> 1.0</div>
+          <div><strong>Versión:</strong> 1.1</div>
           <div><strong>Vigencia:</strong> 29 de julio de 2026</div>
         </div>
         <div class="toc-title">Índice</div>
@@ -446,7 +509,7 @@
       <div class="ribbon-body-inner">
         <div class="doc-meta">
           <div><strong>Documento:</strong> Política de Privacidad y Protección de Datos Personales</div>
-          <div><strong>Versión:</strong> 1.0</div>
+          <div><strong>Versión:</strong> 1.1</div>
           <div><strong>Vigencia:</strong> 29 de julio de 2026</div>
         </div>
         <div class="toc-title">Índice</div>
@@ -471,13 +534,14 @@
       <div class="ribbon-body-inner">
         <div class="doc-meta">
           <div><strong>Documento:</strong> Política de Devoluciones y Garantías</div>
-          <div><strong>Versión:</strong> 1.0</div>
+          <div><strong>Versión:</strong> 1.1</div>
           <div><strong>Vigencia:</strong> 29 de julio de 2026</div>
         </div>
         <div class="toc-title">Índice</div>
         <ul class="toc-list" id="devolutions-toc"></ul>
         <div id="devolutions-sections"></div>
         <div class="reveal-wrap" id="devolutions-reveal"></div>
+        <div class="signature-block" style="font-style:normal;margin-bottom:22px"><strong>Nota de revisión (Versión 1.1):</strong> se corrigió el plazo de arrepentimiento del Cliente en la Política de Devoluciones y Garantías, que pasa de "diez (10) días hábiles" a <strong>diez (10) días corridos</strong>, conforme el artículo 34 de la Ley N.° 24.240. Se aclaró además que este derecho no constituye un período de prueba y se incorporó la referencia al "botón de arrepentimiento" (Disposición N.° 954/2025).</div>
       </div>
     </div>
   </div>
